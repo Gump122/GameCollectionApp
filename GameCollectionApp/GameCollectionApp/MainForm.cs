@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,5 +38,11 @@ namespace GameCollectionApp
             new ljw.LjwForm(this).Show();
             Hide();
         }
-    }
+
+        private void xcButton_Click(object sender, EventArgs e)
+        {
+            new xc.XcForm(this).Show();
+            Hide();
+        }
+  }
 }

@@ -12,14 +12,17 @@ namespace GameCollectionApp.xc
 {
   public partial class XcForm : Form
   {
-    public XcForm()
-    {
+    private Form parent;
+    public XcForm(Form parent)
+    {      
       InitializeComponent();
+      this.parent = parent;
     }
 
-    private void XcForm_Load(object sender, EventArgs e)
+    private void exitButton_Click(object sender, EventArgs e)
     {
-
+      parent.Show();
+      Close();
     }
   }
 }
