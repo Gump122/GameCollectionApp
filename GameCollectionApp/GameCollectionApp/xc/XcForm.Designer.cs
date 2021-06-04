@@ -29,36 +29,51 @@ namespace GameCollectionApp.xc
     /// </summary>
     private void InitializeComponent()
     {
-            this.exitButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // exitButton
-            // 
-            this.exitButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.exitButton.Location = new System.Drawing.Point(49, 40);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.exitButton.Size = new System.Drawing.Size(88, 35);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // XcForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.exitButton);
-            this.Name = "XcForm";
-            this.Text = "XcForm";
-            //this.Load += new System.EventHandler(this.XcForm_Load);
-            this.ResumeLayout(false);
+      this.menuButton = new System.Windows.Forms.Button();
+      this.scoreLabel = new System.Windows.Forms.Label();
+      this.SuspendLayout();
+      // 
+      // menuButton
+      // 
+      this.menuButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+      this.menuButton.Font = new System.Drawing.Font("黑体", 9F);
+      this.menuButton.Location = new System.Drawing.Point(0, 0);
+      this.menuButton.Name = "menuButton";
+      this.menuButton.Size = new System.Drawing.Size(95, 40);
+      this.menuButton.TabIndex = 1;
+      this.menuButton.Text = "菜单";
+      this.menuButton.UseVisualStyleBackColor = true;
+      this.menuButton.Click += new System.EventHandler(this.menuButton_Click);
+      // 
+      // scoreLabel
+      // 
+      this.scoreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+      this.scoreLabel.AutoSize = true;
+      this.scoreLabel.Font = new System.Drawing.Font("黑体", 18F);
+      this.scoreLabel.Location = new System.Drawing.Point(420, 495);
+      this.scoreLabel.Name = "scoreLabel";
+      this.scoreLabel.Size = new System.Drawing.Size(141, 36);
+      this.scoreLabel.TabIndex = 2;
+      this.scoreLabel.Text = "得分：0";
+      this.scoreLabel.Click += new System.EventHandler(this.scoreLabel_Click);
+      // 
+      // XcForm
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.ClientSize = new System.Drawing.Size(978, 544);
+      this.Controls.Add(this.scoreLabel);
+      this.Controls.Add(this.menuButton);
+      this.Name = "XcForm";
+      this.Text = "XcForm";
+      this.Load += new System.EventHandler(this.XcForm_Load);
+      this.ResumeLayout(false);
+      this.PerformLayout();
 
     }
 
     #endregion
-
-    private System.Windows.Forms.Button exitButton;
+    private System.Windows.Forms.Button menuButton;
+    private System.Windows.Forms.Label scoreLabel;
   }
 }
