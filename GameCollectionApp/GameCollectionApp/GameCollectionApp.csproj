@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="sw\swForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\swForm.Designer.cs">
+      <DependentUpon>swForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="dk\DkForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="xc\XcForm.Designer.cs">
       <DependentUpon>XcForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="sw\swForm.resx">
+      <DependentUpon>swForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dk\DkForm.resx">
       <DependentUpon>DkForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,7 +116,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="sw\" />
     <Folder Include="zhy\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
