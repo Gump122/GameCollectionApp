@@ -44,5 +44,11 @@ namespace GameCollectionApp
             new xc.XcForm(this).Show();
             Hide();
         }
-  }
+
+        private void swButton_Click(object sender, EventArgs e)
+        {
+            new sw.SwForm(this).Show();
+            Hide();
+        }
+    }
 }
