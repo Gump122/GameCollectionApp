@@ -1,4 +1,4 @@
-﻿namespace GameCollectionApp.sw
+namespace GameCollectionApp.sw
 {
     partial class SwForm
     {
@@ -33,20 +33,25 @@
             // 
             // exitButton
             // 
-            this.exitButton.Location = new System.Drawing.Point(43, 38);
+            this.exitButton.Location = new System.Drawing.Point(64, 57);
+            this.exitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.Size = new System.Drawing.Size(112, 34);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "exit";
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            // 
+            // SwForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 675);
             this.Controls.Add(this.exitButton);
-            this.Name = "swForm";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "SwForm";
             this.Text = "swForm";
+            this.Load += new System.EventHandler(this.SwForm_Load);
             this.ResumeLayout(false);
 
         }

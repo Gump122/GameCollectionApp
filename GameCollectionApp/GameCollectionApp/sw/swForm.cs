@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,5 +24,10 @@ namespace GameCollectionApp.sw
             parent.Show();
             Close();
         }
+
+    private void SwForm_Load(object sender, EventArgs e)
+    {
+
     }
+  }
 }

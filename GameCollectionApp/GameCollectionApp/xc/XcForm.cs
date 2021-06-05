@@ -18,7 +18,7 @@ namespace GameCollectionApp.xc
       InitializeComponent();
       this.parent = parent;
       this.Text = "金字塔纸牌";
-
+      //this.BackgroundImage=
     }
 
     private void XcForm_Load(object sender, EventArgs e)
