@@ -15,6 +15,7 @@ namespace GameCollectionApp
         public MainForm()
         {
             InitializeComponent();
+            this.Text="游戏合集";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
