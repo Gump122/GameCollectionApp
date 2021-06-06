@@ -21,13 +21,19 @@ namespace GameCollectionApp.dk
 
         private void DkForm_Load(object sender, EventArgs e)
         {
-
+            Program program = new Program();
+            program.init(this.fresh);
         }
 
         private void exitButton_Click(object sender, EventArgs e)
         {
             parent.Show();
             Close();
+        }
+
+        public void fresh()
+        {
+
         }
     }
 }
