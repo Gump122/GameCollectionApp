@@ -51,5 +51,6 @@ namespace GameCollectionApp
             new sw.SwForm(this).Show();
             Hide();
         }
+
     }
 }

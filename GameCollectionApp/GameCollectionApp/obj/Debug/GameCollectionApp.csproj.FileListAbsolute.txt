@@ -24,3 +24,5 @@ D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectio
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.pdb
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.xc.XcForm.resources
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.swForm.resources
+D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.SwForm.resources
+D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.xc.XcForm.resources

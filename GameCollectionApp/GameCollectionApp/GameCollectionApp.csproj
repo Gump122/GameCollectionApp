@@ -67,6 +67,27 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sw\swForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\swForm.Designer.cs">
+      <DependentUpon>swForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xc\Card.cs" />
+    <Compile Include="xc\CardsPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="xc\CardsPictureBox.Designer.cs">
+      <DependentUpon>CardsPictureBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xc\Pyramid.cs" />
+    <Compile Include="xc\PyramidFrame.cs" />
+    <Compile Include="xc\XcForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xc\XcForm.Designer.cs">
+      <DependentUpon>XcForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="dk\DkForm.resx">
       <DependentUpon>DkForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +107,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sw\swForm.resx">
+      <DependentUpon>swForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xc\XcForm.resx">
+      <DependentUpon>XcForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -100,8 +127,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="sw\" />
-    <Folder Include="xc\" />
     <Folder Include="zhy\" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +230,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="src\z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -30,6 +30,8 @@
         {
             this.dkButton = new System.Windows.Forms.Button();
             this.ljwButton = new System.Windows.Forms.Button();
+            this.xcButton = new System.Windows.Forms.Button();
+            this.swButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dkButton
@@ -52,11 +54,33 @@
             this.ljwButton.UseVisualStyleBackColor = true;
             this.ljwButton.Click += new System.EventHandler(this.ljwButton_Click);
             // 
+            // xcButton
+            // 
+            this.xcButton.Location = new System.Drawing.Point(258, 31);
+            this.xcButton.Name = "xcButton";
+            this.xcButton.Size = new System.Drawing.Size(81, 22);
+            this.xcButton.TabIndex = 2;
+            this.xcButton.Text = "xc";
+            this.xcButton.UseVisualStyleBackColor = true;
+            this.xcButton.Click += new System.EventHandler(this.xcButton_Click);
+            // 
+            // swButton
+            // 
+            this.swButton.Location = new System.Drawing.Point(370, 31);
+            this.swButton.Name = "swButton";
+            this.swButton.Size = new System.Drawing.Size(84, 21);
+            this.swButton.TabIndex = 3;
+            this.swButton.Text = "sw";
+            this.swButton.UseVisualStyleBackColor = true;
+            this.swButton.Click += new System.EventHandler(this.swButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.swButton);
+            this.Controls.Add(this.xcButton);
             this.Controls.Add(this.ljwButton);
             this.Controls.Add(this.dkButton);
             this.Name = "MainForm";
@@ -71,5 +95,7 @@
 
         private System.Windows.Forms.Button dkButton;
         private System.Windows.Forms.Button ljwButton;
+        private System.Windows.Forms.Button xcButton;
+        private System.Windows.Forms.Button swButton;
     }
 }
