@@ -40,11 +40,12 @@ namespace GameCollectionApp.dk
 
                 if(game.getNext()==3)
                 {
-
+                    askAction(0);
+                    game.run(actionValue);
                 }
                 else
                 {
-
+                    game.run(ai.run(game.getCards(game.getNext()), game.getBufCard()));
                 }
 
                 for (int n = 0; n < 4; n++) 
@@ -192,6 +193,7 @@ namespace GameCollectionApp.dk
             Card c;
             c.color = (Card.Color)(i / 4);
             c.num = (ushort)(i % 9 + 1);
+            c.show = false;
             return c;
         }
 
@@ -266,9 +268,10 @@ namespace GameCollectionApp.dk
             bufCard = cardsRemain[--cardsRemainNum];
         }
 
+        //待补
         public bool checkChi(int type)
         {
-
+            return false;
         }
 
         public void chi(int i,int type)
@@ -276,9 +279,10 @@ namespace GameCollectionApp.dk
 
         }
 
+        //待补
         public bool checkPen(int n)
         {
-
+            return false;
         }
 
         public void pen(int n,int i)
@@ -317,9 +321,11 @@ namespace GameCollectionApp.dk
             return _checkHu(cards);
         }
 
+        //待补
         private int _checkHu(Card[] cards)
         {
             sort(cards);
+            return 0;
         }
 
         private void sort(Card[] cards)
@@ -342,11 +348,25 @@ namespace GameCollectionApp.dk
         //return c1<c2 坨，索，万，字（东南西北中发白）
         private bool compare(Card c1,Card c2)
         {
+            if (c1.show != c2.show)
+            {
+                if (c1.show)
+                    return false;
+                if (c2.show)
+                    return true;
+            }
             return ctoi(c1) < ctoi(c2);
         }
         //return c1>c2 坨，索，万，字（东南西北中发白）
         private bool _compare(Card c1, Card c2)
         {
+            if(c1.show!=c2.show)
+            {
+                if (c1.show)
+                    return true;
+                if (c2.show)
+                    return false;
+            }
             return ctoi(c1) > ctoi(c2);
         }
     }
@@ -359,16 +379,19 @@ namespace GameCollectionApp.dk
         }
         public Color color;
         public ushort num;
+        public bool show;
 
         public Card(Card card)
         {
             this.color = card.color;
             this.num = card.num;
+            this.show = card.show;
         }
     }
 
     class Computer
     {
+        //待补
         public int run(Card[] cards,Card bufCard)
         {
             return 15;

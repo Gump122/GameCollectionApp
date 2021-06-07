@@ -23,6 +23,7 @@ namespace GameCollectionApp.dk
         {
             Program program = new Program();
             program.init(this.fresh);
+            program.start();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -32,6 +33,71 @@ namespace GameCollectionApp.dk
         }
 
         public void fresh()
+        {
+
+        }
+
+        private void card13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void card1_Click(object sender, EventArgs e)
         {
 
         }

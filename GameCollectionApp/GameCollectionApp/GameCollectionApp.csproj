@@ -52,6 +52,7 @@
     <Compile Include="dk\DkForm.Designer.cs">
       <DependentUpon>DkForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="dk\Program.cs" />
     <Compile Include="ljw\LjwForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,6 +103,9 @@
     <Folder Include="sw\" />
     <Folder Include="xc\" />
     <Folder Include="zhy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\1t.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
