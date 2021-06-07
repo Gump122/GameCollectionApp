@@ -150,5 +150,11 @@ namespace GameCollectionApp.xc
     {
 
     }
-  }
+
+        //dk_0607_1420
+        private void XcForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.Show();
+        }
+    }
 }
