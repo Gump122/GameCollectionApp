@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.exitButton = new System.Windows.Forms.Button();
             this.card1 = new System.Windows.Forms.Button();
             this.card2 = new System.Windows.Forms.Button();
             this.card3 = new System.Windows.Forms.Button();
@@ -43,22 +42,14 @@
             this.card12 = new System.Windows.Forms.Button();
             this.card13 = new System.Windows.Forms.Button();
             this.card14 = new System.Windows.Forms.Button();
-            this.card15 = new System.Windows.Forms.Button();
+            this.RemainCardsTextBox = new System.Windows.Forms.TextBox();
+            this.cancelPen = new System.Windows.Forms.Button();
+            this.cancelChi = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(1345, 646);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // card1
             // 
-            this.card1.Location = new System.Drawing.Point(39, 422);
+            this.card1.Location = new System.Drawing.Point(272, 678);
             this.card1.Name = "card1";
             this.card1.Size = new System.Drawing.Size(88, 118);
             this.card1.TabIndex = 1;
@@ -67,7 +58,7 @@
             // 
             // card2
             // 
-            this.card2.Location = new System.Drawing.Point(124, 422);
+            this.card2.Location = new System.Drawing.Point(357, 678);
             this.card2.Name = "card2";
             this.card2.Size = new System.Drawing.Size(88, 118);
             this.card2.TabIndex = 2;
@@ -76,7 +67,7 @@
             // 
             // card3
             // 
-            this.card3.Location = new System.Drawing.Point(209, 422);
+            this.card3.Location = new System.Drawing.Point(442, 678);
             this.card3.Name = "card3";
             this.card3.Size = new System.Drawing.Size(88, 118);
             this.card3.TabIndex = 3;
@@ -85,7 +76,7 @@
             // 
             // card4
             // 
-            this.card4.Location = new System.Drawing.Point(290, 422);
+            this.card4.Location = new System.Drawing.Point(523, 678);
             this.card4.Name = "card4";
             this.card4.Size = new System.Drawing.Size(88, 118);
             this.card4.TabIndex = 4;
@@ -94,7 +85,7 @@
             // 
             // card5
             // 
-            this.card5.Location = new System.Drawing.Point(375, 422);
+            this.card5.Location = new System.Drawing.Point(608, 678);
             this.card5.Name = "card5";
             this.card5.Size = new System.Drawing.Size(88, 118);
             this.card5.TabIndex = 5;
@@ -103,7 +94,7 @@
             // 
             // card6
             // 
-            this.card6.Location = new System.Drawing.Point(456, 422);
+            this.card6.Location = new System.Drawing.Point(689, 678);
             this.card6.Name = "card6";
             this.card6.Size = new System.Drawing.Size(88, 118);
             this.card6.TabIndex = 6;
@@ -112,7 +103,7 @@
             // 
             // card7
             // 
-            this.card7.Location = new System.Drawing.Point(540, 422);
+            this.card7.Location = new System.Drawing.Point(773, 678);
             this.card7.Name = "card7";
             this.card7.Size = new System.Drawing.Size(88, 118);
             this.card7.TabIndex = 7;
@@ -121,7 +112,7 @@
             // 
             // card8
             // 
-            this.card8.Location = new System.Drawing.Point(623, 422);
+            this.card8.Location = new System.Drawing.Point(856, 678);
             this.card8.Name = "card8";
             this.card8.Size = new System.Drawing.Size(88, 118);
             this.card8.TabIndex = 8;
@@ -130,7 +121,7 @@
             // 
             // card11
             // 
-            this.card11.Location = new System.Drawing.Point(873, 422);
+            this.card11.Location = new System.Drawing.Point(1106, 678);
             this.card11.Name = "card11";
             this.card11.Size = new System.Drawing.Size(88, 118);
             this.card11.TabIndex = 9;
@@ -139,7 +130,7 @@
             // 
             // card9
             // 
-            this.card9.Location = new System.Drawing.Point(704, 422);
+            this.card9.Location = new System.Drawing.Point(937, 678);
             this.card9.Name = "card9";
             this.card9.Size = new System.Drawing.Size(88, 118);
             this.card9.TabIndex = 10;
@@ -148,7 +139,7 @@
             // 
             // card10
             // 
-            this.card10.Location = new System.Drawing.Point(788, 422);
+            this.card10.Location = new System.Drawing.Point(1021, 678);
             this.card10.Name = "card10";
             this.card10.Size = new System.Drawing.Size(88, 118);
             this.card10.TabIndex = 11;
@@ -157,7 +148,7 @@
             // 
             // card12
             // 
-            this.card12.Location = new System.Drawing.Point(958, 422);
+            this.card12.Location = new System.Drawing.Point(1191, 678);
             this.card12.Name = "card12";
             this.card12.Size = new System.Drawing.Size(88, 118);
             this.card12.TabIndex = 12;
@@ -166,7 +157,7 @@
             // 
             // card13
             // 
-            this.card13.Location = new System.Drawing.Point(1042, 422);
+            this.card13.Location = new System.Drawing.Point(1273, 678);
             this.card13.Name = "card13";
             this.card13.Size = new System.Drawing.Size(88, 118);
             this.card13.TabIndex = 13;
@@ -175,26 +166,59 @@
             // 
             // card14
             // 
-            this.card14.Location = new System.Drawing.Point(1125, 422);
+            this.card14.Location = new System.Drawing.Point(1439, 678);
             this.card14.Name = "card14";
             this.card14.Size = new System.Drawing.Size(88, 118);
             this.card14.TabIndex = 14;
             this.card14.UseVisualStyleBackColor = true;
+            this.card14.Click += new System.EventHandler(this.card14_Click);
             // 
-            // card15
+            // RemainCardsTextBox
             // 
-            this.card15.Location = new System.Drawing.Point(1281, 422);
-            this.card15.Name = "card15";
-            this.card15.Size = new System.Drawing.Size(88, 118);
-            this.card15.TabIndex = 15;
-            this.card15.UseVisualStyleBackColor = true;
+            this.RemainCardsTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.RemainCardsTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.RemainCardsTextBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.RemainCardsTextBox.Font = new System.Drawing.Font("宋体", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.RemainCardsTextBox.Location = new System.Drawing.Point(908, 362);
+            this.RemainCardsTextBox.Name = "RemainCardsTextBox";
+            this.RemainCardsTextBox.ReadOnly = true;
+            this.RemainCardsTextBox.Size = new System.Drawing.Size(117, 22);
+            this.RemainCardsTextBox.TabIndex = 16;
+            this.RemainCardsTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // cancelPen
+            // 
+            this.cancelPen.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelPen.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cancelPen.Location = new System.Drawing.Point(1669, 706);
+            this.cancelPen.Name = "cancelPen";
+            this.cancelPen.Size = new System.Drawing.Size(148, 62);
+            this.cancelPen.TabIndex = 17;
+            this.cancelPen.Text = "不碰";
+            this.cancelPen.UseVisualStyleBackColor = false;
+            this.cancelPen.Click += new System.EventHandler(this.cancelPen_Click);
+            // 
+            // cancelChi
+            // 
+            this.cancelChi.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cancelChi.Font = new System.Drawing.Font("宋体", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.cancelChi.Location = new System.Drawing.Point(1669, 706);
+            this.cancelChi.Name = "cancelChi";
+            this.cancelChi.Size = new System.Drawing.Size(148, 62);
+            this.cancelChi.TabIndex = 18;
+            this.cancelChi.Text = "不吃";
+            this.cancelChi.UseVisualStyleBackColor = false;
+            this.cancelChi.Click += new System.EventHandler(this.cancelChi_Click);
             // 
             // DkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1432, 681);
-            this.Controls.Add(this.card15);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(1904, 941);
+            this.Controls.Add(this.cancelChi);
+            this.Controls.Add(this.cancelPen);
+            this.Controls.Add(this.RemainCardsTextBox);
             this.Controls.Add(this.card14);
             this.Controls.Add(this.card13);
             this.Controls.Add(this.card12);
@@ -209,17 +233,18 @@
             this.Controls.Add(this.card3);
             this.Controls.Add(this.card2);
             this.Controls.Add(this.card1);
-            this.Controls.Add(this.exitButton);
             this.Name = "DkForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DkForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.DkForm_FormClosed);
             this.Load += new System.EventHandler(this.DkForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button card1;
         private System.Windows.Forms.Button card2;
         private System.Windows.Forms.Button card3;
@@ -234,6 +259,8 @@
         private System.Windows.Forms.Button card12;
         private System.Windows.Forms.Button card13;
         private System.Windows.Forms.Button card14;
-        private System.Windows.Forms.Button card15;
+        private System.Windows.Forms.TextBox RemainCardsTextBox;
+        private System.Windows.Forms.Button cancelPen;
+        private System.Windows.Forms.Button cancelChi;
     }
 }

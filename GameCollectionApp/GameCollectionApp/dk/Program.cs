@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace GameCollectionApp.dk
 {
@@ -22,6 +23,16 @@ namespace GameCollectionApp.dk
         int actionType;//0 run 1-3 chi 4 pen 5 gan
         int actionValue;
         bool actioned;
+        bool[] locks;
+
+        const int sleepTime = 500;
+
+        public Program()
+        {
+            game = new Game();
+            ai = new Computer();
+            locks = new bool[13];
+        }
 
         public void init(sign s)
         {
@@ -35,10 +46,25 @@ namespace GameCollectionApp.dk
         {
             while(true)
             {
+                actionType = -1;
                 fresh();
-                Thread.Sleep(500);
+                //Thread.Sleep(sleepTime);
 
-                if(game.getNext()==3)
+
+                if (game.checkHu()>0)
+                {
+                    MessageBox.Show("胡了");
+                    break;
+                }
+
+
+                if (game.getRemainNum() == 0)
+                {
+                    MessageBox.Show("没牌了");
+                    break;
+                }
+
+                if (game.getNext()==3)
                 {
                     askAction(0);
                     game.run(actionValue);
@@ -57,21 +83,27 @@ namespace GameCollectionApp.dk
                     }
                     if(game.checkPen(r))
                     {
-                        if(n==3)
+                        if(r==3)
                         {
+                            for(int i=0;i<13;i++)
+                            {
+                                if (game.getCards()[i].equals(game.getCardsAbandon().Last()))
+                                    locks[i] = true;
+                            }
                             askAction(4);
+                            unlock();
                             if (actionValue != 0)
                             {
-                                game.pen(n, actionValue);
+                                game.pen(r, actionValue - 1);
                                 break;
                             }
                         }
                         else
                         {
-                            r = ai.run(game.getCards(n), game.getBufCard());
-                            if (r != 15)
+                            int _r = ai.run(game.getCards(r), game.getCardsAbandon().Last());
+                            if (_r != 14)
                             {
-                                game.pen(n, r);
+                                game.pen(r, _r - 1);
                                 break;
                             }
                         }
@@ -84,25 +116,75 @@ namespace GameCollectionApp.dk
                     {
                         if (game.getNext() == 3)
                         {
+                            Card c1 = game.getCardsAbandon().Last();
+                            Card c2 = game.getCardsAbandon().Last();
+                            switch (i)
+                            {
+                                case 0:
+                                    c1.num += 1;
+                                    c2.num += 2;
+                                    break;
+                                case 1:
+                                    c1.num -= 1;
+                                    c2.num += 1;
+                                    break;
+                                case 2:
+                                    c1.num -= 1;
+                                    c2.num -= 2;
+                                    break;
+                            }
+                            for (int j = 0; j < 13; j++)
+                            {
+                                if (game.getCards()[j].equals(c1))
+                                {
+                                    locks[j] = true;
+                                    c1.num = 0;
+                                }
+                                if (game.getCards()[j].equals(c2))
+                                {
+                                    locks[j] = true;
+                                    c2.num = 0;
+                                }
+                            }
                             askAction(i + 1);
+                            unlock();
                             if (actionValue != 0) 
                             {
-                                game.chi(actionValue,i + 1);
+                                game.chi(actionValue - 1);
                                 break;
                             }
                         }
                         else
                         {
-                            int r = ai.run(game.getCards(game.getNext()), game.getBufCard());
-                            if (r!=15)
+                            int r = ai.run(game.getCards(game.getNext()), game.getCardsAbandon().Last());
+                            if (r!=14)
                             {
-                                game.chi(r, i + 1);
+                                game.chi(r - 1);
                                 break;
                             }
                         }
                     }
                 }
+
             }
+        }
+
+        public bool[] getLocks()
+        {
+            return locks;
+        }
+
+        private void unlock()
+        {
+            for(int i=0;i<locks.Length;i++)
+            {
+                locks[i] = false;
+            }
+        }
+
+        public int getRemainCardsNum()
+        {
+            return game.getRemainNum();
         }
 
         private void askAction(int type)
@@ -118,6 +200,43 @@ namespace GameCollectionApp.dk
             actioned = false;
             actionType = 0;
             fresh();
+        }
+
+        public void setAction(int value)
+        {
+            if (!controlable)
+                return;
+            actionValue = value;
+            actioned = true;
+        }
+
+        public void setAction(int value,int type)
+        {
+            if (!controlable)
+                return;
+            actionValue = value;
+            actionType = type;
+            actioned = true;
+        }
+
+        public Card[] getPlayerCards()
+        {
+            return game.getCards(3);
+        }
+
+        public Card getBufCard()
+        {
+            return game.getBufCard();
+        }
+
+        public int getActionType()
+        {
+            return actionType;
+        }
+
+        public List<Card> getCardsAbandon()
+        {
+            return game.getCardsAbandon();
         }
 
         public void start()
@@ -150,8 +269,8 @@ namespace GameCollectionApp.dk
 
         public Game()
         {
-            playerCards = new Card[14];
-            computersCards = new Card[3,14];
+            playerCards = new Card[13];
+            computersCards = new Card[3,13];
             cardsAbandon = new List<Card>();
             cardsRemain = new Card[102];
         }
@@ -177,7 +296,7 @@ namespace GameCollectionApp.dk
                 cardsRemain[n] = itoc(i);
             }
             cardsRemainNum = 102;
-            for(int i=0;i<14;i++)
+            for(int i=0;i<13;i++)
             {
                 playerCards[i] = cardsRemain[--cardsRemainNum];
                 for (int j = 0; j < 3; j++)
@@ -185,13 +304,14 @@ namespace GameCollectionApp.dk
             }
             next = r.Next(3);
             bufCard = cardsRemain[--cardsRemainNum];
+            sort(playerCards);
         }
 
         //0-33
         private Card itoc(int i)
         {
             Card c;
-            c.color = (Card.Color)(i / 4);
+            c.color = (Card.Color)(i / 9);
             c.num = (ushort)(i % 9 + 1);
             c.show = false;
             return c;
@@ -216,21 +336,30 @@ namespace GameCollectionApp.dk
             return cardsRemainNum == 0;
         }
 
+        public int getRemainNum()
+        {
+            return cardsRemainNum;
+        }
         public Card getBufCard()
         {
             return new Card(bufCard);
         }
 
+        public List<Card> getCardsAbandon()
+        {
+            return cardsAbandon;
+        }
+
         public Card[] getCards(int n)
         {
-            Card[] cards = new Card[14];
+            Card[] cards = new Card[13];
             if(n==3)
             {
-                for (int i = 0; i < 14; i++)
+                for (int i = 0; i < 13; i++)
                     cards[i] = playerCards[i];
                 return cards;
             }
-            for (int i = 0; i < 14; i++)
+            for (int i = 0; i < 13; i++)
                 cards[i] = computersCards[n,i];
             return cards;
         }
@@ -240,10 +369,10 @@ namespace GameCollectionApp.dk
             return getCards(next);
         }
 
-        //1-15
+        //1-14
         public void run(int i)
         {
-            if (i == 15)
+            if (i == 14)
             {
                 cardsAbandon.Add(bufCard);
                 next++;
@@ -255,39 +384,114 @@ namespace GameCollectionApp.dk
             //player=3
             if (next == 3) 
             {
-                cardsAbandon.Add(playerCards[i]);
-                playerCards[i] = bufCard;
+                cardsAbandon.Add(playerCards[i-1]);
+                playerCards[i-1] = bufCard;
                 next = 0;
                 bufCard = cardsRemain[--cardsRemainNum];
+                sort(playerCards);
                 return;
             }
             //computer=0-2
-            cardsAbandon.Add(computersCards[next, i]);
-            computersCards[next, i] = bufCard;
+            cardsAbandon.Add(computersCards[next, i-1]);
+            computersCards[next, i-1] = bufCard;
             next++;
             bufCard = cardsRemain[--cardsRemainNum];
+            
         }
 
-        //待补
         public bool checkChi(int type)
         {
-            return false;
+            if (cardsAbandon.Last().color == Card.Color.z)
+                return false;
+            Card[] cards = getCards(next);
+            bool r1 = false;
+            bool r2 = false;
+            Card c1 = cardsAbandon.Last();
+            Card c2 = cardsAbandon.Last();
+            switch (type)
+            {
+                case 1:
+                    c1.num += 1;
+                    c2.num += 2;
+                    break;
+                case 2:
+                    c1.num -= 1;
+                    c2.num += 1;
+                    break;
+                case 3:
+                    c1.num -= 1;
+                    c2.num -= 2;
+                    break;
+            }
+            foreach(Card card in cards)
+            {
+                if (card.equals(c1))
+                    r1 = true;
+                if (card.equals(c2))
+                    r2 = true;
+            }
+            return r1 && r2;
         }
 
-        public void chi(int i,int type)
+        public void chi(int i)
         {
-
+            Card buf = cardsAbandon.Last();
+            cardsAbandon.RemoveAt(cardsAbandon.Count() - 1);
+            if (next==3)
+            {
+                cardsAbandon.Add(playerCards[i]);
+                playerCards[i] = buf;
+                next = 0;
+            }
+            else
+            {
+                cardsAbandon.Add(computersCards[next, i]);
+                computersCards[next, i] = buf;
+                next += 1;
+            }
         }
 
-        //待补
         public bool checkPen(int n)
         {
+            int count=0;
+            if(n==3)
+            {
+                foreach(Card card in playerCards)
+                {
+                    if (cardsAbandon.Last().equals(card))
+                        count++;
+                }
+            }
+            else
+            {
+                for(int i=0;i<13;i++)
+                {
+                    if (cardsAbandon.Last().equals(computersCards[n, i]))
+                        count++;
+                }
+            }
+            if (count == 2)
+                return true;
             return false;
         }
 
         public void pen(int n,int i)
         {
-
+            Card buf = cardsAbandon.Last();
+            cardsAbandon.RemoveAt(cardsAbandon.Count()-1);
+            if (n == 3)
+            {
+                cardsAbandon.Add(playerCards[i]);
+                playerCards[i] = buf;
+                sort(playerCards);
+                next = 0;
+            }
+            else
+            {
+                cardsAbandon.Add(computersCards[n,i]);
+                computersCards[n, i] = buf;
+                next = n + 1;
+            }
         }
 
         //public bool checkGan(int n)
@@ -302,18 +506,18 @@ namespace GameCollectionApp.dk
 
         public int checkHu()
         {
-            Card[] cards = new Card[15];
-            cards[14] = bufCard;
+            Card[] cards = new Card[14];
+            cards[13] = bufCard;
             if (next==3)
             {
-                for (int i = 0; i < 14; i++) 
+                for (int i = 0; i < 13; i++) 
                 {
                     cards[i] = playerCards[i];
                 }
             }
             else
             {
-                for (int i = 0; i < 14; i++)
+                for (int i = 0; i < 13; i++)
                 {
                     cards[i] = computersCards[next,i];
                 }
@@ -387,6 +591,11 @@ namespace GameCollectionApp.dk
             this.num = card.num;
             this.show = card.show;
         }
+
+        public bool equals(Card card)
+        {
+            return color == card.color && num == card.num;
+        }
     }
 
     class Computer
@@ -394,7 +603,7 @@ namespace GameCollectionApp.dk
         //待补
         public int run(Card[] cards,Card bufCard)
         {
-            return 15;
+            return 14;
         }
     }
 }

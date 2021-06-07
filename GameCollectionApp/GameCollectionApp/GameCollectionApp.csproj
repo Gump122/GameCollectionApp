@@ -107,5 +107,104 @@
   <ItemGroup>
     <None Include="src\1t.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="src\2t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\3t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\4t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\5t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\6t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\7t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\8t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\9t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\1w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\2w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\3w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\4w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\5w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\6w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\7s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\7w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\8s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\8w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\9w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\z.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -44,7 +44,7 @@
             // 
             // ljwButton
             // 
-            this.ljwButton.Location = new System.Drawing.Point(159, 31);
+            this.ljwButton.Location = new System.Drawing.Point(149, 31);
             this.ljwButton.Name = "ljwButton";
             this.ljwButton.Size = new System.Drawing.Size(75, 23);
             this.ljwButton.TabIndex = 1;
