@@ -92,12 +92,21 @@ namespace GameCollectionApp.dk
             card12.Image = ctoim(program.getPlayerCards()[11]);
             card13.Image = ctoim(program.getPlayerCards()[12]);
 
-            for(int i=0;i<program.getLocks().Length;i++)
+            bool[] showCards = program.getShowCards();
+            for (int i = 0; i < 13; i++)
+            {
+                if (showCards[i])
+                    itob(i + 1).Location = new Point(itob(i + 1).Location.X, 778);
+                else
+                    itob(i + 1).Location = new Point(itob(i + 1).Location.X, 678);
+            }
+
+            for (int i = 0; i < program.getLocks().Length; i++)
             {
                 if (program.getLocks()[i])
-                    itob(i+1).Enabled = false;
+                    itob(i + 1).Enabled = false;
                 else
-                    itob(i+1).Enabled = true;
+                    itob(i + 1).Enabled = true;
             }
 
             if (program.getActionType() == 0)

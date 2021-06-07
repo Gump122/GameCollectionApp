@@ -50,20 +50,13 @@ namespace GameCollectionApp.dk
                 fresh();
                 //Thread.Sleep(sleepTime);
 
-
-                if (game.checkHu()>0)
-                {
-                    MessageBox.Show("胡了");
-                    break;
-                }
-
-
                 if (game.getRemainNum() == 0)
                 {
-                    MessageBox.Show("没牌了");
+                    MessageBox.Show("流局");
                     break;
                 }
 
+                //正常出牌
                 if (game.getNext()==3)
                 {
                     askAction(0);
@@ -74,6 +67,35 @@ namespace GameCollectionApp.dk
                     game.run(ai.run(game.getCards(game.getNext()), game.getBufCard()));
                 }
 
+                if (true)
+                {
+                    int hu = game.checkHu();
+                    if (hu > 0)
+                    {
+                        string msg = "";
+                        if (hu == 3)
+                            msg += "玩家自摸";
+                        if (hu == 4)
+                            msg += "电脑自摸";
+                        if (hu == 1)
+                            msg += "玩家胡";
+                        if (hu == 2)
+                        {
+                            msg += "电脑胡";
+                            if (game.getNext() == 0)
+                                msg = "玩家点炮";
+                        }
+
+                        fresh();
+                        MessageBox.Show(msg);
+                        
+
+                        break;
+                    }
+                }
+
+                //碰
+                bool pened=false;
                 for (int n = 0; n < 4; n++) 
                 {
                     int r = game.getNext() + n;
@@ -91,10 +113,12 @@ namespace GameCollectionApp.dk
                                     locks[i] = true;
                             }
                             askAction(4);
-                            unlock();
+                            relock();
                             if (actionValue != 0)
                             {
                                 game.pen(r, actionValue - 1);
+                                pened = true;
+                                relock();
                                 break;
                             }
                         }
@@ -104,12 +128,43 @@ namespace GameCollectionApp.dk
                             if (_r != 14)
                             {
                                 game.pen(r, _r - 1);
+                                pened = true;
                                 break;
                             }
                         }
                     }
                 }
 
+                if (pened)
+                {
+                    int hu = game.checkHu();
+                    if (hu > 0)
+                    {
+                        string msg = "";
+                        if (hu == 3)
+                            msg += "玩家自摸";
+                        if (hu == 4)
+                            msg += "电脑自摸";
+                        if (hu == 1)
+                            msg += "玩家胡";
+                        if (hu == 2)
+                        {
+                            msg += "电脑胡";
+                            if (game.getNext() == 0)
+                                msg = "玩家点炮";
+                        }
+
+                        fresh();
+                        MessageBox.Show(msg);
+                        
+
+                        break;
+                    }
+                }
+
+
+                //吃
+                bool chied = false;
                 for (int i = 0; i < 3; i++)
                 {
                     if (game.checkChi(i + 1)) 
@@ -147,10 +202,12 @@ namespace GameCollectionApp.dk
                                 }
                             }
                             askAction(i + 1);
-                            unlock();
+                            relock();
                             if (actionValue != 0) 
                             {
-                                game.chi(actionValue - 1);
+                                game.chi(actionValue - 1, i + 1);
+                                chied = true;
+                                relock();
                                 break;
                             }
                         }
@@ -159,13 +216,39 @@ namespace GameCollectionApp.dk
                             int r = ai.run(game.getCards(game.getNext()), game.getCardsAbandon().Last());
                             if (r!=14)
                             {
-                                game.chi(r - 1);
+                                game.chi(r - 1, i + 1);
+                                chied = true;
                                 break;
                             }
                         }
                     }
                 }
 
+                if (chied)
+                {
+                    int hu = game.checkHu();
+                    if (hu > 0)
+                    {
+                        string msg = "";
+                        if (hu == 3)
+                            msg += "玩家自摸";
+                        if (hu == 4)
+                            msg += "电脑自摸";
+                        if (hu == 1)
+                            msg += "玩家胡";
+                        if (hu == 2)
+                        {
+                            msg += "电脑胡";
+                            if (game.getNext() == 0)
+                                msg = "玩家点炮";
+                        }
+
+                        fresh();
+                        MessageBox.Show(msg);
+
+                        break;
+                    }
+                }
             }
         }
 
@@ -174,11 +257,23 @@ namespace GameCollectionApp.dk
             return locks;
         }
 
-        private void unlock()
+        public bool[] getShowCards()
+        {
+            bool[] r = new bool[13];
+            for(int i=0;i<13;i++)
+            {
+                r[i] = game.getCards()[i].show;
+            }
+            return r;
+        }
+
+        private void relock()
         {
             for(int i=0;i<locks.Length;i++)
             {
                 locks[i] = false;
+                if (game.getCards()[i].show)
+                    locks[i] = true;
             }
         }
 
@@ -366,7 +461,7 @@ namespace GameCollectionApp.dk
 
         public Card[] getCards()
         {
-            return getCards(next);
+            return getCards(3);
         }
 
         //1-14
@@ -425,6 +520,8 @@ namespace GameCollectionApp.dk
             }
             foreach(Card card in cards)
             {
+                if (card.show)
+                    continue;
                 if (card.equals(c1))
                     r1 = true;
                 if (card.equals(c2))
@@ -433,7 +530,7 @@ namespace GameCollectionApp.dk
             return r1 && r2;
         }
 
-        public void chi(int i)
+        public void chi(int i,int type)
         {
             Card buf = cardsAbandon.Last();
             cardsAbandon.RemoveAt(cardsAbandon.Count() - 1);
@@ -442,6 +539,43 @@ namespace GameCollectionApp.dk
                 cardsAbandon.Add(playerCards[i]);
                 playerCards[i] = buf;
                 next = 0;
+
+                Card c1 = buf;
+                Card c2 = buf;
+                switch (type)
+                {
+                    case 1:
+                        c1.num += 1;
+                        c2.num += 2;
+                        break;
+                    case 2:
+                        c1.num -= 1;
+                        c2.num += 1;
+                        break;
+                    case 3:
+                        c1.num -= 1;
+                        c2.num -= 2;
+                        break;
+                }
+
+                playerCards[i].show = true;
+                for(int j=0;j<13;j++)
+                {
+                    if (playerCards[j].show)
+                        continue;
+                    if (playerCards[j].equals(c1))
+                    {
+                        playerCards[j].show = true;
+                        c1.num = 0;
+                    }
+                    if(playerCards[j].equals(c2))
+                    {
+                        playerCards[j].show = true;
+                        c2.num = 0;
+                    }
+                }
+
+                sort(playerCards);
             }
             else
             {
@@ -458,6 +592,8 @@ namespace GameCollectionApp.dk
             {
                 foreach(Card card in playerCards)
                 {
+                    if (card.show)
+                        continue;
                     if (cardsAbandon.Last().equals(card))
                         count++;
                 }
@@ -483,6 +619,13 @@ namespace GameCollectionApp.dk
             {
                 cardsAbandon.Add(playerCards[i]);
                 playerCards[i] = buf;
+                for(int j=0;j<13;j++)
+                {
+                    if (playerCards[j].show)
+                        continue;
+                    if (playerCards[j].equals(buf))
+                        playerCards[j].show = true;
+                }
                 sort(playerCards);
                 next = 0;
             }
@@ -490,6 +633,11 @@ namespace GameCollectionApp.dk
             {
                 cardsAbandon.Add(computersCards[n,i]);
                 computersCards[n, i] = buf;
+                for (int j = 0; j < 13; j++)
+                {
+                    if (computersCards[n, j].equals(buf)) 
+                        computersCards[n, j].show = true;
+                }
                 next = n + 1;
             }
         }
@@ -507,29 +655,117 @@ namespace GameCollectionApp.dk
         public int checkHu()
         {
             Card[] cards = new Card[14];
-            cards[13] = bufCard;
-            if (next==3)
+            cards[13] = cardsAbandon.Last();
+
+            for (int i = 0; i < 13; i++) 
             {
-                for (int i = 0; i < 13; i++) 
-                {
-                    cards[i] = playerCards[i];
-                }
+                cards[i] = playerCards[i];
+                if (_checkHu(cards))
+                    return 1;
             }
-            else
+
+            for (int n = 0; n < 3; n++)
             {
                 for (int i = 0; i < 13; i++)
                 {
-                    cards[i] = computersCards[next,i];
+                    cards[i] = computersCards[n, i];
+                    if (_checkHu(cards))
+                        return 2;
                 }
             }
-            return _checkHu(cards);
+
+            cards[13] = bufCard;
+
+            if (next == 3) 
+            {
+                for (int i = 0; i < 13; i++)
+                {
+                    cards[i] = playerCards[i];
+                    if (_checkHu(cards))
+                        return 3;
+                }
+            }
+            else 
+            {
+                for (int i = 0; i < 13; i++)
+                {
+                    cards[i] = computersCards[next, i];
+                    if (_checkHu(cards))
+                        return 4;
+                }
+            }
+
+            return 0;
         }
 
-        //待补
-        private int _checkHu(Card[] cards)
+        public bool _checkHu(Card[] cards)
         {
-            sort(cards);
-            return 0;
+            Card[] buf = new Card[14];
+
+            for (int i=0;i<14-1;i++)
+            {
+                for (int j = 0; j < 14; j++)
+                    buf[j] = cards[j];
+
+                if (buf[i].equals(buf[i+1]))
+                {
+                    buf[i].show = true;
+                    buf[i + 1].show = true;
+
+                    if (recursionCheck(buf))
+                        return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool recursionCheck(Card[] cards)
+        {
+            bool r = true;
+            foreach (Card card in cards)
+                r &= card.show;
+            if (r)
+                return true;
+
+            Card[] buf = new Card[14];
+            for (int i = 0; i < 14; i++)
+                buf[i] = cards[i];
+
+            sort(buf);
+
+            if(buf[0].equals(buf[1])&& buf[0].equals(buf[2]))
+            {
+                buf[0].show = true;
+                buf[1].show = true;
+                buf[2].show = true;
+                if (recursionCheck(buf))
+                    return true;
+            }
+
+            Card c1 = buf[0];
+            c1.num += 1;
+            Card c2 = buf[0];
+            c2.num += 2;
+            for(int i=0;i<14;i++)
+            {
+                if (buf[i].show)
+                    break;
+                if(buf[i].equals(c1))
+                {
+                    buf[i].show = true;
+                    c1.num = 0;
+                }
+                if (buf[i].equals(c2))
+                {
+                    buf[i].show = true;
+                    c2.num = 0;
+                }
+            }
+            if (c1.num == c2.num)
+                return recursionCheck(buf);
+
+            return false;
         }
 
         private void sort(Card[] cards)
