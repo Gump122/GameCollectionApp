@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +15,7 @@ namespace GameCollectionApp
         public MainForm()
         {
             InitializeComponent();
+            this.Text="游戏合集";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -36,6 +37,18 @@ namespace GameCollectionApp
         private void ljwButton_Click(object sender, EventArgs e)
         {
             new ljw.LjwForm(this).Show();
+            Hide();
+        }
+
+        private void xcButton_Click(object sender, EventArgs e)
+        {
+            new xc.XcForm(this).Show();
+            Hide();
+        }
+
+        private void swButton_Click(object sender, EventArgs e)
+        {
+            new sw.SwForm(this).Show();
             Hide();
         }
     }

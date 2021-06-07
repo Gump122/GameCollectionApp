@@ -10,3 +10,17 @@ D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\Game
 D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.dk.DkForm.resources
 D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.MainForm.resources
 D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.ljw.LjwForm.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\bin\Debug\GameCollectionApp.exe.config
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\bin\Debug\GameCollectionApp.exe
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\bin\Debug\GameCollectionApp.pdb
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.csprojAssemblyReference.cache
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.dk.DkForm.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.ljw.LjwForm.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.MainForm.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.Properties.Resources.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.csproj.GenerateResource.cache
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.csproj.CoreCompileInputs.cache
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.exe
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.pdb
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.xc.XcForm.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.swForm.resources
