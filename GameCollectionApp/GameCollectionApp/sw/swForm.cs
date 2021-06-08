@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using HeroGame;
 
 namespace GameCollectionApp.sw
 {
@@ -16,7 +17,7 @@ namespace GameCollectionApp.sw
         public SwForm(Form parent)
         {
             InitializeComponent();
-            this.parent = parent;
+            this.parent = parent; 
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -25,9 +26,19 @@ namespace GameCollectionApp.sw
             Close();
         }
 
-    private void SwForm_Load(object sender, EventArgs e)
-    {
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void test_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-  }
 }
