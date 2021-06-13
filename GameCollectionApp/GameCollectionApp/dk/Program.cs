@@ -48,7 +48,7 @@ namespace GameCollectionApp.dk
             {
                 actionType = -1;
                 fresh();
-                //Thread.Sleep(sleepTime);
+                Thread.Sleep(sleepTime);
 
                 if (game.getRemainNum() == 0)
                 {

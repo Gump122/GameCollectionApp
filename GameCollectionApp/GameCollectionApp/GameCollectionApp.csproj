@@ -53,12 +53,19 @@
       <DependentUpon>DkForm.cs</DependentUpon>
     </Compile>
     <Compile Include="dk\Program.cs" />
+    <Compile Include="ljw\GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ljw\GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ljw\LjwForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ljw\LjwForm.Designer.cs">
       <DependentUpon>LjwForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ljw\Program.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +101,9 @@
     </Compile>
     <EmbeddedResource Include="dk\DkForm.resx">
       <DependentUpon>DkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ljw\GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ljw\LjwForm.resx">
       <DependentUpon>LjwForm.cs</DependentUpon>
