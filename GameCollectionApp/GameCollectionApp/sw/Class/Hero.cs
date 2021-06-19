@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace HeroGame
 {
@@ -11,57 +12,57 @@ namespace HeroGame
         /// <summary>
         /// 英雄名称
         /// </summary>
-        public string name;
+        private string name;
 
         /// <summary>
         /// 英雄血量
         /// </summary>
-        public int hp;
+        private int hp;
 
         /// <summary>
         /// 英雄拥有金钱
         /// </summary>
-        public int money;
+        private int money;
 
         /// <summary>
         /// 英雄基础攻击力
         /// </summary>
-        public int ad;
+        private int ad;
 
         /// <summary>
         /// 英雄基础法强
         /// </summary>
-        public int ap;
+        private int ap;
 
         /// <summary>
         /// 英雄基础护甲
         /// </summary>
-        public int armor;
+        private int armor;
 
         /// <summary>
         /// 英雄基础魔抗
         /// </summary>
-        public int magicResistance;
+        private int magicResistance;
 
         /// <summary>
         /// 装备加成魔抗
         /// </summary>
-        public int magicResistanceUp;
+        private int magicResistanceUp;
 
         /// <summary>
         /// 装备护甲加成
         /// </summary>
-        public int armorUp;
+        private int armorUp;
 
         /// <summary>
         /// 装备加成法强
         /// </summary>
-        public int apUp;
+        private int apUp;
 
         /// <summary>
         /// 装备加成攻击力
         /// </summary>
-        public int adUp;
+        private int adUp;
 
         /// <summary>
         /// 英雄所有技能
@@ -77,6 +78,24 @@ namespace HeroGame
         /// 英雄状态
         /// </summary>
         public State state;
+
+        public string Name { get => name; set => name = value; }
+        public int Hp { get => hp; set => hp = value; }
+        public int Money { get => money; set => money = value; }
+        public int Ad { get => ad; set => ad = value; }
+        public int Ap { get => ap; set => ap = value; }
+        public int Armor { get => armor; set => armor = value; }
+        public int MagicResistance { get => magicResistance; set => magicResistance = value; }
+        public int MagicResistanceUp { get => magicResistanceUp; set => magicResistanceUp = value; }
+        public int ArmorUp { get => armorUp; set => armorUp = value; }
+        public int ApUp { get => apUp; set => apUp = value; }
+        public int AdUp { get => adUp; set => adUp = value; }
+        
+
+        public Hero()
+        {
+        }
+
 
         /// <summary>
         /// 学习技能
@@ -104,22 +123,22 @@ namespace HeroGame
         public bool Attack(Hero hero)
         {
             //被攻击的英雄掉血
-            hero.hp -= (ad + adUp);
+            hero.Hp -= (Ad + AdUp);
 
-            Console.WriteLine($"{name}对{hero.name}使用了普通攻击");
-            Console.WriteLine($"对{hero.name}造成了{ad + adUp}点伤害");
-            Console.WriteLine($"{hero.name}剩余血量：{hero.hp}");
-            Console.WriteLine($"{name}获得了{(ad + adUp) * 10}的金钱");
+            Console.WriteLine($"{Name}对{hero.Name}使用了普通攻击");
+            Console.WriteLine($"对{hero.Name}造成了{Ad + AdUp}点伤害");
+            Console.WriteLine($"{hero.Name}剩余血量：{hero.Hp}");
+            Console.WriteLine($"{Name}获得了{(Ad + AdUp) * 10}的金钱");
 
             //攻击获得金钱
-            money += (ad + adUp) * 10;
+            Money += (Ad + AdUp) * 10;
 
-            Console.WriteLine($"{name}当前拥有的金钱数量是{money}");
+            Console.WriteLine($"{Name}当前拥有的金钱数量是{Money}");
 
             //判断被攻击者是否死亡
-            if (hero.hp <= 0)
+            if (hero.Hp <= 0)
             {
-                Console.WriteLine($"{hero.name}已经死亡！");
+                Console.WriteLine($"{hero.Name}已经死亡！");
                 return true;
             }
 
@@ -137,25 +156,25 @@ namespace HeroGame
             skill.cdCount = 0;
 
             //被攻击的英雄掉血
-            hero.hp -= skill.dmg * skill.level;
+            hero.Hp -= skill.dmg * skill.level;
 
             hero.state = skill.state;
 
-            Console.WriteLine($"{name}对{hero.name}使用了{skill.name}");
-            Console.WriteLine($"对{hero.name}造成了{skill.dmg * skill.level}点伤害");
-            Console.WriteLine($"{hero.name}被{name}{skill.state}了");
-            Console.WriteLine($"{hero.name}剩余血量：{hero.hp}");
-            Console.WriteLine($"{name}获得了{skill.dmg * skill.level * 10}的金钱");
+            Console.WriteLine($"{Name}对{hero.Name}使用了{skill.name}");
+            Console.WriteLine($"对{hero.Name}造成了{skill.dmg * skill.level}点伤害");
+            Console.WriteLine($"{hero.Name}被{Name}{skill.state}了");
+            Console.WriteLine($"{hero.Name}剩余血量：{hero.Hp}");
+            Console.WriteLine($"{Name}获得了{skill.dmg * skill.level * 10}的金钱");
 
             //攻击所得金钱
-            money += skill.dmg * skill.level * 10;
+            Money += skill.dmg * skill.level * 10;
 
-            Console.WriteLine($"{name}当前拥有的金钱数量是{money}");
+            Console.WriteLine($"{Name}当前拥有的金钱数量是{Money}");
 
             //判断被攻击者是否死亡
-            if (hero.hp <= 0)
+            if (hero.Hp <= 0)
             {
-                Console.WriteLine($"{hero.name}被击杀了");
+                Console.WriteLine($"{hero.Name}被击杀了");
                 return true;
             }
 
@@ -170,7 +189,7 @@ namespace HeroGame
             //限制购买数量
             if (equipments.Count > 6)
             {
-                Console.WriteLine($"{name}不能再购买更多的装备了！");
+                Console.WriteLine($"{Name}不能再购买更多的装备了！");
                 return true;
             }
 
@@ -181,20 +200,20 @@ namespace HeroGame
             }
 
             //判断所有金钱是否足够购买
-            if (money < equipment.buyPrice)
+            if (Money < equipment.buyPrice)
             {
-                Console.WriteLine($"【{name}当前没有足够的金钱】");
+                Console.WriteLine($"【{Name}当前没有足够的金钱】");
                 return false;
             }
             else if (equipment.type == EquipmentType.Consumables)
             {
-                hp += equipment.hp;
+                Hp += equipment.hp;
 
-                money -= equipment.buyPrice;
+                Money -= equipment.buyPrice;
 
                 Console.WriteLine($"【购买{equipment.name}成功！】");
-                Console.WriteLine($"【{name}恢复了{equipment.hp}点生命】");
-                Console.WriteLine($"【{name}当前的血量是{hp}】");
+                Console.WriteLine($"【{Name}恢复了{equipment.hp}点生命】");
+                Console.WriteLine($"【{Name}当前的血量是{Hp}】");
 
                 return true;
 
@@ -202,16 +221,16 @@ namespace HeroGame
             else
             {
                 equipments.Add(equipment);
-                Console.WriteLine($"{name}购买了{equipment.name}，{name}变强了！");
+                Console.WriteLine($"{Name}购买了{equipment.name}，{Name}变强了！");
 
                 //扣除金钱
-                money -= equipment.buyPrice;
+                Money -= equipment.buyPrice;
 
                 //计算装备加成
-                adUp += equipment.adUp;
-                apUp += equipment.apUP;
-                armorUp += equipment.armorUp;
-                magicResistanceUp += equipment.magicResistanceUp;
+                AdUp += equipment.adUp;
+                ApUp += equipment.apUP;
+                ArmorUp += equipment.armorUp;
+                MagicResistanceUp += equipment.magicResistanceUp;
 
                 return true;
             }
@@ -219,17 +238,17 @@ namespace HeroGame
 
         public Hero(string name, int hp, int ad, int ap, int armor, int magicResistance, List<Skill> skills)
         {
-            this.name = name;
-            this.hp = hp;
-            money = 0;
-            this.ad = ad;
-            this.ap = ap;
-            this.armor = armor;
-            this.magicResistance = magicResistance;
-            magicResistanceUp = 0;
-            armorUp = 0;
-            apUp = 0;
-            adUp = 0;
+            this.Name = name;
+            this.Hp = hp;
+            Money = 0;
+            this.Ad = ad;
+            this.Ap = ap;
+            this.Armor = armor;
+            this.MagicResistance = magicResistance;
+            MagicResistanceUp = 0;
+            ArmorUp = 0;
+            ApUp = 0;
+            AdUp = 0;
             this.skills = skills;
             equipments = new List<Equipment>();
             state = State.Normal;
@@ -252,7 +271,7 @@ namespace HeroGame
         public Hero PKWith(Hero hero)
         {
             Console.WriteLine("------------------------------");
-            Console.WriteLine($"【{name}的回合】");
+            Console.WriteLine($"【{Name}的回合】");
             IntroduceSkill();
 
             //控制学习技能的循环的标记
@@ -309,7 +328,7 @@ namespace HeroGame
                 //首先判断英雄当前所处的状态
                 if (state == State.Normal)
                 {
-                    Console.WriteLine($"{name}当前的状态是：{state}");
+                    Console.WriteLine($"{Name}当前的状态是：{state}");
 
                     Console.WriteLine("********************************");
 
@@ -318,7 +337,7 @@ namespace HeroGame
                 }
                 else if (state == State.Silence)
                 {
-                    Console.WriteLine($"{name}当前的状态是：{state}");
+                    Console.WriteLine($"{Name}当前的状态是：{state}");
 
                     Console.WriteLine("********************************");
 
@@ -327,7 +346,7 @@ namespace HeroGame
                 }
                 else
                 {
-                    Console.WriteLine($"{name}当前的状态是：{state}");
+                    Console.WriteLine($"{Name}当前的状态是：{state}");
 
                     Console.WriteLine("********************************");
 
@@ -338,7 +357,7 @@ namespace HeroGame
                 {
                     case "0":
 
-                        Console.WriteLine($"{name}正在购买装备。。。");
+                        Console.WriteLine($"{Name}正在购买装备。。。");
                         Store.Introduce();
 
                         Console.WriteLine("请输入你要购买的装备的编号：（输入666退出）");
@@ -361,7 +380,7 @@ namespace HeroGame
                         //根据英雄状态决定是否可以执行此操作
                         if (state == State.Dizziness)
                         {
-                            Console.WriteLine($"{name}在当前状态下不能执行此操作！");
+                            Console.WriteLine($"{Name}在当前状态下不能执行此操作！");
                             break;
                         }
 
@@ -377,11 +396,11 @@ namespace HeroGame
                         //根据英雄状态决定是否可以执行此操作
                         if (state != State.Normal)
                         {
-                            Console.WriteLine($"{name}在当前状态下不能执行此操作！");
+                            Console.WriteLine($"{Name}在当前状态下不能执行此操作！");
                             break;
                         }
 
-                        Console.WriteLine($"{name}当前可以释放以下技能。。。");
+                        Console.WriteLine($"{Name}当前可以释放以下技能。。。");
 
                         //用来保存所有可用的技能
                         List<Skill> usableSkill = new List<Skill>();
