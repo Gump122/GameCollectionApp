@@ -78,10 +78,12 @@
     <Compile Include="sw\Class\Hero.cs" />
     <Compile Include="sw\Class\Skill.cs" />
     <Compile Include="sw\Class\Store.cs" />
-    <Compile Include="sw\swForm.cs">
+    <Compile Include="sw\SwForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sw\swForm.Designer.cs" />
+    <Compile Include="sw\SwForm.Designer.cs">
+      <DependentUpon>SwForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="sw\Type\EquipmentType.cs" />
     <Compile Include="sw\Type\State.cs" />
     <Compile Include="xc\Card.cs" />
@@ -121,7 +123,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="sw\swForm.resx" />
+    <EmbeddedResource Include="sw\SwForm.resx">
+      <DependentUpon>SwForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xc\XcForm.resx">
       <DependentUpon>XcForm.cs</DependentUpon>
     </EmbeddedResource>
