@@ -5,7 +5,7 @@ namespace HeroGame
     /// <summary>
     /// 装备类
     /// </summary>
-    class Equipment
+    public class Equipment
     {
         /// <summary>
         /// 装备名称
@@ -52,6 +52,8 @@ namespace HeroGame
         /// </summary>
         public int hp;
 
+        private string equipmentintroduce;
+
         public Equipment(string name, int adUp, int apUP, int armorUp, int magicResistanceUp, int buyPrice, int sellPrice, EquipmentType type, int hp)
         {
             this.name = name;
@@ -63,7 +65,29 @@ namespace HeroGame
             this.sellPrice = sellPrice;
             this.type = type;
             this.hp = hp;
+
+            if(type==EquipmentType.Normal)
+            {
+                this.equipmentintroduce = $"【装备名称】：{name}"
+                  + Environment.NewLine + $"【装备花费】：{buyPrice}"
+                  + Environment.NewLine + $"【出售价格】：{sellPrice}"
+                  + Environment.NewLine + $"【装备类型】：普通类型"
+                  + Environment.NewLine + $"【攻击加成】：{adUp}"
+                  + Environment.NewLine + $"【法术加成】：{apUP}"
+                  + Environment.NewLine + $"【护甲加成】：{armorUp}"
+                  + Environment.NewLine + $"【魔抗加成】：{magicResistanceUp}";
+            }
+            else
+            {
+                this.equipmentintroduce = $"【装备名称】：{name}"
+                  + Environment.NewLine + $"【装备花费】：{buyPrice}"
+                  + Environment.NewLine + $"【出售价格】：{sellPrice}"
+                  + Environment.NewLine + $"【装备类型】：消耗品"
+                  + Environment.NewLine + $"【装备回复生命值】：{hp}";
+            }
         }
+
+        public string Equipmentintroduce { get => equipmentintroduce; set => equipmentintroduce = value; }
 
         /// <summary>
         /// 装备详情介绍方法

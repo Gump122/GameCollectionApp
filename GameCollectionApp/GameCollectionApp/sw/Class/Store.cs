@@ -6,7 +6,7 @@ namespace HeroGame
     /// <summary>
     /// 商店类
     /// </summary>
-    class Store
+    public class Store
     {
         /// <summary>
         /// 装备仓库

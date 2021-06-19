@@ -4,7 +4,7 @@ namespace HeroGame
     /// <summary>
     /// 英雄状态的枚举
     /// </summary>
-    enum State
+    public enum State
     {
         /// <summary>
         /// 普通
