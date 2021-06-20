@@ -36,9 +36,9 @@
             // 
             // dkButton
             // 
-            this.dkButton.Location = new System.Drawing.Point(38, 32);
+            this.dkButton.Location = new System.Drawing.Point(-1, -1);
             this.dkButton.Name = "dkButton";
-            this.dkButton.Size = new System.Drawing.Size(75, 23);
+            this.dkButton.Size = new System.Drawing.Size(253, 234);
             this.dkButton.TabIndex = 0;
             this.dkButton.Text = "dk";
             this.dkButton.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // ljwButton
             // 
-            this.ljwButton.Location = new System.Drawing.Point(149, 31);
+            this.ljwButton.Location = new System.Drawing.Point(247, 229);
             this.ljwButton.Name = "ljwButton";
-            this.ljwButton.Size = new System.Drawing.Size(75, 23);
+            this.ljwButton.Size = new System.Drawing.Size(245, 220);
             this.ljwButton.TabIndex = 1;
             this.ljwButton.Text = "ljw";
             this.ljwButton.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // xcButton
             // 
-            this.xcButton.Location = new System.Drawing.Point(258, 31);
+            this.xcButton.Location = new System.Drawing.Point(247, -1);
             this.xcButton.Name = "xcButton";
-            this.xcButton.Size = new System.Drawing.Size(81, 22);
+            this.xcButton.Size = new System.Drawing.Size(245, 234);
             this.xcButton.TabIndex = 2;
             this.xcButton.Text = "xc";
             this.xcButton.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // 
             // swButton
             // 
-            this.swButton.Location = new System.Drawing.Point(370, 31);
+            this.swButton.Location = new System.Drawing.Point(-1, 229);
             this.swButton.Name = "swButton";
-            this.swButton.Size = new System.Drawing.Size(84, 21);
+            this.swButton.Size = new System.Drawing.Size(250, 220);
             this.swButton.TabIndex = 3;
             this.swButton.Text = "sw";
             this.swButton.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(491, 450);
             this.Controls.Add(this.swButton);
             this.Controls.Add(this.xcButton);
             this.Controls.Add(this.ljwButton);

@@ -11,7 +11,7 @@ using System.Windows;
 
 namespace GameCollectionApp.ljw
 {
-    class Program
+    public class Program
     {
         TcpListener tcl;
         TcpClient tcc;
@@ -19,6 +19,17 @@ namespace GameCollectionApp.ljw
         Thread thread;
         bool next;
         Command command;
+
+        public Program()
+        {
+            game = new Game();
+        }
+
+        public void setCommand(int x,int y)
+        {
+            command.x = x;
+            command.y = y;
+        }
 
         public bool createGame(int port)
         {
@@ -210,6 +221,11 @@ namespace GameCollectionApp.ljw
             thread = null;
         }
 
+        public piece[,] getTable()
+        {
+            return game.getTable();
+        }
+
         //采用管道所以不需要访问控制了
         //public bool controlAble()
         //{
@@ -236,7 +252,7 @@ namespace GameCollectionApp.ljw
     {
         piece[,] table;
         int size;
-        static int defaultSize = 10;
+        public static int defaultSize = 10;
 
         public Game(int n)
         {
@@ -251,6 +267,11 @@ namespace GameCollectionApp.ljw
                 return -1;
             table[x, y] = color;
             return (int)judge5();  
+        }
+
+        public piece[,] getTable()
+        {
+            return table;
         }
 
         private piece judge5()

@@ -34,7 +34,6 @@
             this.ip2 = new System.Windows.Forms.TextBox();
             this.port2 = new System.Windows.Forms.TextBox();
             this.ip1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // createButton
@@ -88,21 +87,11 @@
             this.ip1.Size = new System.Drawing.Size(215, 21);
             this.ip1.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
-            // 
             // LjwForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 258);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.ip1);
             this.Controls.Add(this.port2);
             this.Controls.Add(this.ip2);
@@ -126,6 +115,5 @@
         private System.Windows.Forms.TextBox ip2;
         private System.Windows.Forms.TextBox port2;
         private System.Windows.Forms.TextBox ip1;
-        private System.Windows.Forms.Label label1;
     }
 }

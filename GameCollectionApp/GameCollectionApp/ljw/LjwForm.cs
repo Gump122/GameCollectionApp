@@ -13,6 +13,7 @@ namespace GameCollectionApp.ljw
     public partial class LjwForm : Form
     {
         private Form parent;
+        private Program program;
         public LjwForm(Form parent)
         {
             InitializeComponent();
@@ -39,12 +40,12 @@ namespace GameCollectionApp.ljw
         {
             if (port1.Text == "")
                 return;
-            Program program = new Program();
+            program = new Program();
             MessageBox.Show("waiting for connecting...");
             if (program.createGame(Convert.ToInt32(this.port1.Text)))
             {
-                new GameForm(parent).Show();
-                this.Close();
+                new GameForm(this, program).Show();
+                this.Hide();
             }
             else
             {
@@ -56,12 +57,12 @@ namespace GameCollectionApp.ljw
         {
             if (port2.Text == "" || ip2.Text == "") 
                 return;
-            Program program = new Program();
+            program = new Program();
             MessageBox.Show("connecting...");
             if (program.joinGame(ip2.Text, Convert.ToInt32(port2.Text)))
             {
-                new GameForm(parent).Show();
-                this.Close();
+                new GameForm(this, program).Show();
+                this.Hide();
             }
             else
             {

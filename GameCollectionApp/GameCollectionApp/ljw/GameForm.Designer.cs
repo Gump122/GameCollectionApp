@@ -34,11 +34,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(484, 511);
             this.Name = "GameForm";
             this.Text = "GameForm";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.GameForm_FormClosed);
             this.Load += new System.EventHandler(this.GameForm_Load);
+            this.Shown += new System.EventHandler(this.GameForm_Shown);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.GameForm_MouseClick);
             this.ResumeLayout(false);
 
         }
