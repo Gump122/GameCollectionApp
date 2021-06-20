@@ -7,10 +7,10 @@ namespace GameCollectionApp.sw
     {
         SwForm parent;
         Hero hero = new Hero();
-        public storeForm(Hero hero1,SwForm parent)
+        public storeForm(Hero hero,SwForm parent)
         {
             InitializeComponent();
-            this.hero = hero1;
+            this.hero = hero;
             this.parent = parent;
             bindstoreequipments();            
         }
@@ -21,6 +21,7 @@ namespace GameCollectionApp.sw
             equipmentintroduce1.DataBindings.Add("Text", Store.store[0], "Equipmentintroduce");
             equipmentintroduce2.DataBindings.Add("Text", Store.store[1], "Equipmentintroduce");
             equipmentintroduce3.DataBindings.Add("Text", Store.store[2], "Equipmentintroduce");
+            moneyview.DataBindings.Add("Text", hero, "Money");
         }
 
 
@@ -88,7 +89,8 @@ namespace GameCollectionApp.sw
                 parent.changeturn();
                 parent.update();
             }
-            else if (hero.Money < Store.store[0].BuyPrice)
+            else if(d == DialogResult.Cancel) { }
+            else if (d == DialogResult.OK&&hero.Money < Store.store[0].BuyPrice)
             {
                 MessageBox.Show("剩余金钱不足！");                
             }
@@ -152,7 +154,8 @@ namespace GameCollectionApp.sw
                 parent.changeturn();
                 parent.update();
             }
-            else if (hero.Money < Store.store[1].BuyPrice)
+            else if (d == DialogResult.Cancel) { }
+            else if (d == DialogResult.OK && hero.Money < Store.store[1].BuyPrice)
             {
                 MessageBox.Show("剩余金钱不足！");
             }
@@ -214,7 +217,8 @@ namespace GameCollectionApp.sw
                 parent.changeturn();
                 parent.update();
             }
-            else if(hero.Money < Store.store[2].BuyPrice)
+            else if (d == DialogResult.Cancel) { }
+            else if(d == DialogResult.OK && hero.Money < Store.store[2].BuyPrice)
             { 
                 MessageBox.Show("剩余金钱不足！");
             }

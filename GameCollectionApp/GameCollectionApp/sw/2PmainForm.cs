@@ -191,9 +191,9 @@ namespace GameCollectionApp.sw
             timoskills.Add(zhongmogu);
 
             //新建装备
-            Equipment sanxiangzhili = new Equipment("三相之力", 45, 15, 20, 10, 1000, 750, EquipmentType.Normal, 0);
-            Equipment wujinzhiren = new Equipment("无尽之刃", 100, 0, 0, 0, 750, 400, EquipmentType.Normal, 0);
-            Equipment feizhaikuaileshui = new Equipment("肥宅快乐水", 15, 5, 20, 10, 500, 0, EquipmentType.Consumables, 300);            
+            Equipment sanxiangzhili = new Equipment("三相之力", 45, 15, 20, 10, 3000, 1750, EquipmentType.Normal, 0);
+            Equipment wujinzhiren = new Equipment("无尽之刃", 100, 0, 0, 0, 2000, 900, EquipmentType.Normal, 0);
+            Equipment feizhaikuaileshui = new Equipment("肥宅快乐水", 15, 5, 20, 10, 800, 0, EquipmentType.Consumables, 300);            
             //将新建的装备放入商店
             Store.store.Add(sanxiangzhili);
             Store.store.Add(wujinzhiren);
@@ -203,7 +203,7 @@ namespace GameCollectionApp.sw
             hero1 = new Hero("版本之子盲僧", initmoney, inithp, initad, initap, Initarmor, InitmagicResistance, mangsengskills);
 
             //新建英雄提莫
-            hero2 = new Hero("万年的子提莫", initmoney, inithp+500, initad, initap, Initarmor, InitmagicResistance, timoskills);           
+            hero2 = new Hero("万年的子提莫", initmoney, inithp+1000, initad, initap, Initarmor, InitmagicResistance, timoskills);           
             update();
             splayer1 = true;
             changeturn();            

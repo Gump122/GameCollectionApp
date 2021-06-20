@@ -106,21 +106,25 @@ namespace HeroGame
                 if (d == DialogResult.OK)
                 {
                     IsStudy = true;
-                    MessageBox.Show("技能学习成功，进入战斗阶段");                    
+                    Level++;
+                    MessageBox.Show("技能学习成功，进入战斗阶段");
+                    return true;
                 }
-                return true;
-            }
+                else if(d == DialogResult.OK) { return false; }
+                
+            }            
             else
             {
                 MessageBox.Show("你已经学习过这个技能了，请选择升级技能");
                 return false;
             }
+            return false;
         }
 
         public Skill(string name, State state, bool isStudy, int dmg, int cd)
         {
             this.Name = name;
-            Level = 1;
+            Level = 0;
             this.State = state;
             this.IsStudy = isStudy;
             this.Dmg = dmg;
@@ -130,7 +134,7 @@ namespace HeroGame
                 +Environment.NewLine+$"【技能等级】：{Level}"
                 +Environment.NewLine+$"【技能类型】：让敌方{State}"
                 +Environment.NewLine+$"【技能基础伤害】：{Dmg}" 
-                +Environment.NewLine+$"【技能等级伤害加成】：{(Level - 1) * 100}"
+                +Environment.NewLine+$"【技能等级伤害加成】：{(Level) * 100}"
                 +Environment.NewLine+$"【技能冷却时间】：每{Cd}回合使用一次";
         }
         /// <summary>
@@ -142,7 +146,7 @@ namespace HeroGame
                 + Environment.NewLine + $"【技能等级】：{Level}"
                 + Environment.NewLine + $"【技能类型】：让敌方{State}"
                 + Environment.NewLine + $"【技能基础伤害】：{Dmg}"
-                + Environment.NewLine + $"【技能等级伤害加成】：{(Level - 1) * 100}"
+                + Environment.NewLine + $"【技能等级伤害加成】：{(Level) * 100}"
                 + Environment.NewLine + $"【技能冷却时间】：每{Cd}回合使用一次";
         }       
 

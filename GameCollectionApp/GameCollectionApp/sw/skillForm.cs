@@ -157,18 +157,23 @@ namespace GameCollectionApp.sw
                 hero1.Skills[0].CdCount = 0;
                 hero2.Hp -= (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor -hero2.ArmorUp - hero2.MagicResistance*2 -hero2.MagicResistanceUp*2);
                 hero2.State = hero1.Skills[0].State;
-                hero1.Money += (hero1.Skills[0].Dmg * hero1.Skills[0].Level * 10 - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
+                hero1.Money += (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 10;
                 if (hero2.Hp < 0)
                 {
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
                     parent.closeall();
                 }
+                else
+                {
+                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
+                    else { parent.splayer2 = false; parent.splayer1 = true; }
+                    parent.changeturn();
+                    parent.update();
+                }
+
                 Close();
-                if(parent.splayer1 == true){ parent.splayer1 = false;parent.splayer2 = true; }
-                else { parent.splayer2 = false; parent.splayer1 = true; }               
-                parent.changeturn();
-                parent.update();
             }
+            else if(d == DialogResult.Cancel) { }
             else { 
                 if(hero1.Skills[0].IsStudy == false)
                 MessageBox.Show("技能尚未学习，发动失败!");
@@ -192,12 +197,17 @@ namespace GameCollectionApp.sw
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
                     parent.closeall();
                 }
+                else
+                {
+                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
+                    else { parent.splayer2 = false; parent.splayer1 = true; }
+                    parent.changeturn();
+                    parent.update();
+                }
+                
                 Close();
-                if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                else { parent.splayer2 = false; parent.splayer1 = true; }
-                parent.changeturn();
-                parent.update();
             }
+            else if (d == DialogResult.Cancel) { }
             else
             {
                 if (hero1.Skills[1].IsStudy == false)
@@ -224,12 +234,19 @@ namespace GameCollectionApp.sw
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
                     parent.closeall();
                 }
+                
+                else
+                {
+                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
+                    else { parent.splayer2 = false; parent.splayer1 = true; }
+                    parent.changeturn();
+                    parent.update();
+                }
+                
+
                 Close();
-                if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                else { parent.splayer2 = false; parent.splayer1 = true; }
-                parent.changeturn();
-                parent.update();
             }
+            else if (d == DialogResult.Cancel) { }
             else
             {
                 if (hero1.Skills[2].IsStudy == false)
@@ -255,12 +272,18 @@ namespace GameCollectionApp.sw
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
                     parent.closeall();
                 }
+                else
+                {
+                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
+                    else { parent.splayer2 = false; parent.splayer1 = true; }
+                    parent.changeturn();
+                    parent.update();
+                }
+                
+
                 Close();
-                if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                else { parent.splayer2 = false; parent.splayer1 = true; }
-                parent.changeturn();
-                parent.update();
             }
+            else if (d == DialogResult.Cancel) { }
             else
             {
                 if (hero1.Skills[3].IsStudy == false)
