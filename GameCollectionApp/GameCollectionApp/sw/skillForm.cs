@@ -157,7 +157,7 @@ namespace GameCollectionApp.sw
                 hero1.Skills[0].CdCount = 0;
                 hero2.Hp -= (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor -hero2.ArmorUp - hero2.MagicResistance*2 -hero2.MagicResistanceUp*2);
                 hero2.State = hero1.Skills[0].State;
-                hero1.Money += (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 10;
+                hero1.Money += (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
                 if (hero2.Hp < 0)
                 {
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
@@ -191,7 +191,7 @@ namespace GameCollectionApp.sw
                 hero1.Skills[1].CdCount = 0;
                 hero2.Hp -= (hero1.Skills[1].Dmg * hero1.Skills[1].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
                 hero2.State = hero1.Skills[1].State;
-                hero1.Money += (hero1.Skills[1].Dmg * hero1.Skills[1].Level * 10 - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
+                hero1.Money += (hero1.Skills[1].Dmg * hero1.Skills[1].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
                 if (hero2.Hp < 0)
                 {
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
@@ -228,7 +228,7 @@ namespace GameCollectionApp.sw
                 hero1.Skills[2].CdCount = 0;
                 hero2.Hp -= (hero1.Skills[2].Dmg * hero1.Skills[2].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
                 hero2.State = hero1.Skills[2].State;
-                hero1.Money += (hero1.Skills[2].Dmg * hero1.Skills[2].Level * 10 - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
+                hero1.Money += (hero1.Skills[2].Dmg * hero1.Skills[2].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
                 if (hero2.Hp < 0)
                 {
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
@@ -266,7 +266,7 @@ namespace GameCollectionApp.sw
                 hero1.Skills[3].CdCount = 0;
                 hero2.Hp -= (hero1.Skills[3].Dmg * hero1.Skills[3].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
                 hero2.State = hero1.Skills[3].State;
-                hero1.Money += (hero1.Skills[3].Dmg * hero1.Skills[3].Level * 10 - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
+                hero1.Money += (hero1.Skills[3].Dmg * hero1.Skills[3].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
                 if (hero2.Hp < 0)
                 {
                     MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");

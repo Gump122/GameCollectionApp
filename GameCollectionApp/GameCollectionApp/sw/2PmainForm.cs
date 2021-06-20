@@ -47,6 +47,7 @@ namespace GameCollectionApp.sw
             if (splayer1)
             {
                 turn.Text = $"{hero1.Name}的回合";
+                hero1.Money += 700;
                 int x = (int)(0.5 * (this.Width - turn.Width));
                 int y = turn.Location.Y;
                 turn.Location = new System.Drawing.Point(x, y);
@@ -76,6 +77,7 @@ namespace GameCollectionApp.sw
             else
             {
                 turn.Text = $"{hero2.Name}的回合";
+                hero2.Money += 700;
                 int x = (int)(0.5 * (this.Width - turn.Width));
                 int y = turn.Location.Y;
                 turn.Location = new System.Drawing.Point(x, y);
@@ -165,15 +167,15 @@ namespace GameCollectionApp.sw
         public void begin_Click(object sender, EventArgs e)
         {
             //新建盲僧技能
-            Skill huiyinji = new Skill("回音击", State.Dizziness, false, 100, 3);
-            Skill jinzhongzhao = new Skill("金钟罩", State.Silence, false, 65, 1);
-            Skill beishang = new Skill("悲伤的失恋", State.Silence, false, 130, 2);
+            Skill huiyinji = new Skill("回音击", State.Dizziness, false, 100, 4);
+            Skill jinzhongzhao = new Skill("金钟罩", State.Silence, false, 65, 2);
+            Skill beishang = new Skill("悲伤的失恋", State.Silence, false, 130, 4);
             Skill touqian = new Skill("偷钱", State.Normal, false, 180, 2);
 
             //新建提莫技能
-            Skill yingxingdechibang = new Skill("隐形的翅膀", State.Dizziness, false, 110, 3);
-            Skill zhimangchuijian = new Skill("致盲吹箭", State.Normal, false, 100, 1);
-            Skill duxingsheji = new Skill("毒性射击", State.Silence, false, 130, 2);
+            Skill yingxingdechibang = new Skill("隐形的翅膀", State.Dizziness, false, 110, 4);
+            Skill zhimangchuijian = new Skill("致盲吹箭", State.Normal, false, 100, 2);
+            Skill duxingsheji = new Skill("毒性射击", State.Silence, false, 130, 3);
             Skill zhongmogu = new Skill("种蘑菇", State.Dizziness, false, 185, 4);
 
             //将盲僧的技能放入一个集合
@@ -191,9 +193,9 @@ namespace GameCollectionApp.sw
             timoskills.Add(zhongmogu);
 
             //新建装备
-            Equipment sanxiangzhili = new Equipment("三相之力", 45, 15, 20, 10, 3000, 1750, EquipmentType.Normal, 0);
+            Equipment sanxiangzhili = new Equipment("三相之力", 45, 45, 30, 30, 3000, 1750, EquipmentType.Normal, 0);
             Equipment wujinzhiren = new Equipment("无尽之刃", 100, 0, 0, 0, 2000, 900, EquipmentType.Normal, 0);
-            Equipment feizhaikuaileshui = new Equipment("肥宅快乐水", 15, 5, 20, 10, 800, 0, EquipmentType.Consumables, 300);            
+            Equipment feizhaikuaileshui = new Equipment("肥宅快乐水", 15, 5, 15, 10, 500, 0, EquipmentType.Consumables, 200);            
             //将新建的装备放入商店
             Store.store.Add(sanxiangzhili);
             Store.store.Add(wujinzhiren);
@@ -254,7 +256,7 @@ namespace GameCollectionApp.sw
             else
             {
                 hero2.Hp -= (hero1.Ad + hero1.AdUp - hero2.Armor - hero2.ArmorUp);
-                hero1.Money += (hero1.Ad + hero1.AdUp - hero2.Armor - hero2.ArmorUp) * 10;
+                hero1.Money += (hero1.Ad + hero1.AdUp - hero2.Armor - hero2.ArmorUp) * 5;
                 if (hero2.Hp < 0)
                 {
                     MessageBox.Show($"{hero1.Name}死亡，{hero2.Name}胜利！");
@@ -275,7 +277,7 @@ namespace GameCollectionApp.sw
             else
             {
                 hero1.Hp -= (hero2.Ad + hero2.AdUp - hero1.Armor - hero1.ArmorUp);
-                hero2.Money += (hero2.Ad + hero2.AdUp - hero1.Armor - hero1.ArmorUp) * 10;
+                hero2.Money += (hero2.Ad + hero2.AdUp - hero1.Armor - hero1.ArmorUp) * 5;
                 if (hero1.Hp < 0)
                 {
                     MessageBox.Show($"{hero1.Name}死亡，{hero2.Name}胜利！");
