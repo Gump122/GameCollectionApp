@@ -392,11 +392,6 @@ namespace GameCollectionApp.sw
             closeall();
         }
 
-        private void SwForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void SwForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             parent.Show();
