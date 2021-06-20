@@ -52,11 +52,11 @@ namespace GameCollectionApp.sw
             this.setting = new System.Windows.Forms.Button();
             this.restart = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.player1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.player1 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.player2 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,10 +64,11 @@ namespace GameCollectionApp.sw
             // attack1
             // 
             this.attack1.Enabled = false;
-            this.attack1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.attack1.Location = new System.Drawing.Point(95, 129);
+            this.attack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.attack1.Location = new System.Drawing.Point(71, 103);
+            this.attack1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.attack1.Name = "attack1";
-            this.attack1.Size = new System.Drawing.Size(96, 37);
+            this.attack1.Size = new System.Drawing.Size(72, 30);
             this.attack1.TabIndex = 4;
             this.attack1.Text = "普通攻击";
             this.attack1.UseVisualStyleBackColor = true;
@@ -76,10 +77,11 @@ namespace GameCollectionApp.sw
             // equipment1
             // 
             this.equipment1.Enabled = false;
-            this.equipment1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.equipment1.Location = new System.Drawing.Point(95, 258);
+            this.equipment1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.equipment1.Location = new System.Drawing.Point(71, 206);
+            this.equipment1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.equipment1.Name = "equipment1";
-            this.equipment1.Size = new System.Drawing.Size(96, 37);
+            this.equipment1.Size = new System.Drawing.Size(72, 30);
             this.equipment1.TabIndex = 5;
             this.equipment1.Text = "购买装备";
             this.equipment1.UseVisualStyleBackColor = true;
@@ -88,10 +90,11 @@ namespace GameCollectionApp.sw
             // equipment2
             // 
             this.equipment2.Enabled = false;
-            this.equipment2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.equipment2.Location = new System.Drawing.Point(171, 256);
+            this.equipment2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.equipment2.Location = new System.Drawing.Point(128, 205);
+            this.equipment2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.equipment2.Name = "equipment2";
-            this.equipment2.Size = new System.Drawing.Size(96, 37);
+            this.equipment2.Size = new System.Drawing.Size(72, 30);
             this.equipment2.TabIndex = 7;
             this.equipment2.Text = "购买装备";
             this.equipment2.UseVisualStyleBackColor = true;
@@ -100,10 +103,11 @@ namespace GameCollectionApp.sw
             // lost1
             // 
             this.lost1.Enabled = false;
-            this.lost1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lost1.Location = new System.Drawing.Point(95, 318);
+            this.lost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lost1.Location = new System.Drawing.Point(71, 254);
+            this.lost1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lost1.Name = "lost1";
-            this.lost1.Size = new System.Drawing.Size(96, 37);
+            this.lost1.Size = new System.Drawing.Size(72, 30);
             this.lost1.TabIndex = 8;
             this.lost1.Text = "投降";
             this.lost1.UseVisualStyleBackColor = true;
@@ -112,10 +116,11 @@ namespace GameCollectionApp.sw
             // lost2
             // 
             this.lost2.Enabled = false;
-            this.lost2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lost2.Location = new System.Drawing.Point(171, 317);
+            this.lost2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lost2.Location = new System.Drawing.Point(128, 254);
+            this.lost2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lost2.Name = "lost2";
-            this.lost2.Size = new System.Drawing.Size(96, 37);
+            this.lost2.Size = new System.Drawing.Size(72, 30);
             this.lost2.TabIndex = 9;
             this.lost2.Text = "投降";
             this.lost2.UseVisualStyleBackColor = true;
@@ -124,10 +129,11 @@ namespace GameCollectionApp.sw
             // begin
             // 
             this.begin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.begin.Font = new System.Drawing.Font("华文琥珀", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.begin.Location = new System.Drawing.Point(427, 491);
+            this.begin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.begin.Location = new System.Drawing.Point(320, 393);
+            this.begin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.begin.Name = "begin";
-            this.begin.Size = new System.Drawing.Size(131, 58);
+            this.begin.Size = new System.Drawing.Size(98, 46);
             this.begin.TabIndex = 10;
             this.begin.Text = "开始游戏";
             this.begin.UseVisualStyleBackColor = false;
@@ -135,10 +141,11 @@ namespace GameCollectionApp.sw
             // 
             // exit
             // 
-            this.exit.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.exit.Location = new System.Drawing.Point(901, 12);
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.exit.Location = new System.Drawing.Point(676, 10);
+            this.exit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(75, 43);
+            this.exit.Size = new System.Drawing.Size(56, 34);
             this.exit.TabIndex = 11;
             this.exit.Text = "退出";
             this.exit.UseVisualStyleBackColor = true;
@@ -147,10 +154,11 @@ namespace GameCollectionApp.sw
             // skill1
             // 
             this.skill1.Enabled = false;
-            this.skill1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skill1.Location = new System.Drawing.Point(95, 65);
+            this.skill1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skill1.Location = new System.Drawing.Point(71, 52);
+            this.skill1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.skill1.Name = "skill1";
-            this.skill1.Size = new System.Drawing.Size(96, 37);
+            this.skill1.Size = new System.Drawing.Size(72, 30);
             this.skill1.TabIndex = 12;
             this.skill1.Text = "技能准备";
             this.skill1.UseVisualStyleBackColor = true;
@@ -159,10 +167,11 @@ namespace GameCollectionApp.sw
             // skill2
             // 
             this.skill2.Enabled = false;
-            this.skill2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skill2.Location = new System.Drawing.Point(171, 63);
+            this.skill2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skill2.Location = new System.Drawing.Point(128, 50);
+            this.skill2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.skill2.Name = "skill2";
-            this.skill2.Size = new System.Drawing.Size(96, 37);
+            this.skill2.Size = new System.Drawing.Size(72, 30);
             this.skill2.TabIndex = 13;
             this.skill2.Text = "技能准备";
             this.skill2.UseVisualStyleBackColor = true;
@@ -172,38 +181,42 @@ namespace GameCollectionApp.sw
             // 
             this.turn.AutoSize = true;
             this.turn.BackColor = System.Drawing.SystemColors.Info;
-            this.turn.Font = new System.Drawing.Font("方正舒体", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.turn.Location = new System.Drawing.Point(373, 279);
+            this.turn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.turn.Location = new System.Drawing.Point(280, 223);
+            this.turn.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.turn.Name = "turn";
-            this.turn.Size = new System.Drawing.Size(126, 27);
+            this.turn.Size = new System.Drawing.Size(105, 25);
             this.turn.TabIndex = 14;
             this.turn.Text = "XX的回合";
             // 
             // hp1
             // 
             this.hp1.AutoSize = true;
-            this.hp1.Location = new System.Drawing.Point(131, 35);
+            this.hp1.Location = new System.Drawing.Point(98, 28);
+            this.hp1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.hp1.Name = "hp1";
-            this.hp1.Size = new System.Drawing.Size(25, 15);
+            this.hp1.Size = new System.Drawing.Size(24, 15);
             this.hp1.TabIndex = 15;
             this.hp1.Text = "HP";
             // 
             // hp2
             // 
             this.hp2.AutoSize = true;
-            this.hp2.Location = new System.Drawing.Point(206, 34);
+            this.hp2.Location = new System.Drawing.Point(154, 27);
+            this.hp2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.hp2.Name = "hp2";
-            this.hp2.Size = new System.Drawing.Size(25, 15);
+            this.hp2.Size = new System.Drawing.Size(24, 15);
             this.hp2.TabIndex = 16;
             this.hp2.Text = "HP";
             // 
             // attack2
             // 
             this.attack2.Enabled = false;
-            this.attack2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.attack2.Location = new System.Drawing.Point(171, 128);
+            this.attack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.attack2.Location = new System.Drawing.Point(128, 102);
+            this.attack2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.attack2.Name = "attack2";
-            this.attack2.Size = new System.Drawing.Size(96, 37);
+            this.attack2.Size = new System.Drawing.Size(72, 30);
             this.attack2.TabIndex = 17;
             this.attack2.Text = "普通攻击";
             this.attack2.UseVisualStyleBackColor = true;
@@ -212,10 +225,11 @@ namespace GameCollectionApp.sw
             // skillattack1
             // 
             this.skillattack1.Enabled = false;
-            this.skillattack1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skillattack1.Location = new System.Drawing.Point(95, 192);
+            this.skillattack1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skillattack1.Location = new System.Drawing.Point(71, 154);
+            this.skillattack1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.skillattack1.Name = "skillattack1";
-            this.skillattack1.Size = new System.Drawing.Size(96, 37);
+            this.skillattack1.Size = new System.Drawing.Size(72, 30);
             this.skillattack1.TabIndex = 18;
             this.skillattack1.Text = "技能攻击";
             this.skillattack1.UseVisualStyleBackColor = true;
@@ -224,10 +238,11 @@ namespace GameCollectionApp.sw
             // skillattack2
             // 
             this.skillattack2.Enabled = false;
-            this.skillattack2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skillattack2.Location = new System.Drawing.Point(171, 191);
+            this.skillattack2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skillattack2.Location = new System.Drawing.Point(128, 153);
+            this.skillattack2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.skillattack2.Name = "skillattack2";
-            this.skillattack2.Size = new System.Drawing.Size(96, 37);
+            this.skillattack2.Size = new System.Drawing.Size(72, 30);
             this.skillattack2.TabIndex = 19;
             this.skillattack2.Text = "技能攻击";
             this.skillattack2.UseVisualStyleBackColor = true;
@@ -237,21 +252,23 @@ namespace GameCollectionApp.sw
             // 
             this.title.AutoSize = true;
             this.title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.title.Font = new System.Drawing.Font("华光胖头鱼_CNKI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.title.ForeColor = System.Drawing.Color.Black;
-            this.title.Location = new System.Drawing.Point(409, 24);
+            this.title.Location = new System.Drawing.Point(307, 19);
+            this.title.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(183, 39);
+            this.title.Size = new System.Drawing.Size(138, 29);
             this.title.TabIndex = 20;
             this.title.Text = "2P对战游戏";
             // 
             // check1
             // 
             this.check1.Enabled = false;
-            this.check1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.check1.Location = new System.Drawing.Point(95, 378);
+            this.check1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.check1.Location = new System.Drawing.Point(71, 302);
+            this.check1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.check1.Name = "check1";
-            this.check1.Size = new System.Drawing.Size(96, 37);
+            this.check1.Size = new System.Drawing.Size(72, 30);
             this.check1.TabIndex = 22;
             this.check1.Text = "查看状态";
             this.check1.UseVisualStyleBackColor = true;
@@ -260,10 +277,11 @@ namespace GameCollectionApp.sw
             // check2
             // 
             this.check2.Enabled = false;
-            this.check2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.check2.Location = new System.Drawing.Point(171, 377);
+            this.check2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.check2.Location = new System.Drawing.Point(128, 302);
+            this.check2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.check2.Name = "check2";
-            this.check2.Size = new System.Drawing.Size(96, 37);
+            this.check2.Size = new System.Drawing.Size(72, 30);
             this.check2.TabIndex = 23;
             this.check2.Text = "查看状态";
             this.check2.UseVisualStyleBackColor = true;
@@ -272,10 +290,11 @@ namespace GameCollectionApp.sw
             // skipturn1
             // 
             this.skipturn1.Enabled = false;
-            this.skipturn1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skipturn1.Location = new System.Drawing.Point(243, 216);
+            this.skipturn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skipturn1.Location = new System.Drawing.Point(182, 173);
+            this.skipturn1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.skipturn1.Name = "skipturn1";
-            this.skipturn1.Size = new System.Drawing.Size(75, 33);
+            this.skipturn1.Size = new System.Drawing.Size(56, 26);
             this.skipturn1.TabIndex = 24;
             this.skipturn1.Text = "跳过";
             this.skipturn1.UseVisualStyleBackColor = true;
@@ -284,10 +303,11 @@ namespace GameCollectionApp.sw
             // skipturn2
             // 
             this.skipturn2.Enabled = false;
-            this.skipturn2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.skipturn2.Location = new System.Drawing.Point(46, 215);
+            this.skipturn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.skipturn2.Location = new System.Drawing.Point(34, 172);
+            this.skipturn2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.skipturn2.Name = "skipturn2";
-            this.skipturn2.Size = new System.Drawing.Size(75, 33);
+            this.skipturn2.Size = new System.Drawing.Size(56, 26);
             this.skipturn2.TabIndex = 25;
             this.skipturn2.Text = "跳过";
             this.skipturn2.UseVisualStyleBackColor = true;
@@ -295,10 +315,11 @@ namespace GameCollectionApp.sw
             // 
             // setting
             // 
-            this.setting.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.setting.Location = new System.Drawing.Point(13, 13);
+            this.setting.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.setting.Location = new System.Drawing.Point(10, 10);
+            this.setting.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.setting.Name = "setting";
-            this.setting.Size = new System.Drawing.Size(156, 42);
+            this.setting.Size = new System.Drawing.Size(117, 34);
             this.setting.TabIndex = 26;
             this.setting.Text = "设置与游戏说明";
             this.setting.UseVisualStyleBackColor = true;
@@ -308,10 +329,11 @@ namespace GameCollectionApp.sw
             // 
             this.restart.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.restart.Enabled = false;
-            this.restart.Font = new System.Drawing.Font("华文琥珀", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.restart.Location = new System.Drawing.Point(427, 121);
+            this.restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.restart.Location = new System.Drawing.Point(320, 97);
+            this.restart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.restart.Name = "restart";
-            this.restart.Size = new System.Drawing.Size(131, 58);
+            this.restart.Size = new System.Drawing.Size(98, 46);
             this.restart.TabIndex = 27;
             this.restart.Text = "重新开始";
             this.restart.UseVisualStyleBackColor = false;
@@ -330,13 +352,37 @@ namespace GameCollectionApp.sw
             this.groupBox1.Controls.Add(this.lost1);
             this.groupBox1.Controls.Add(this.equipment1);
             this.groupBox1.Controls.Add(this.attack1);
-            this.groupBox1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 77);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox1.Location = new System.Drawing.Point(10, 62);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(354, 508);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(266, 406);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "玩家1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Red;
+            this.label1.Location = new System.Drawing.Point(28, 28);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 15);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "HP";
+            // 
+            // player1
+            // 
+            this.player1.BackColor = System.Drawing.Color.MistyRose;
+            this.player1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.player1.Location = new System.Drawing.Point(4, 367);
+            this.player1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.player1.Name = "player1";
+            this.player1.Size = new System.Drawing.Size(256, 28);
+            this.player1.TabIndex = 25;
+            this.player1.Text = "玩家";
             // 
             // groupBox2
             // 
@@ -351,59 +397,43 @@ namespace GameCollectionApp.sw
             this.groupBox2.Controls.Add(this.skill2);
             this.groupBox2.Controls.Add(this.lost2);
             this.groupBox2.Controls.Add(this.equipment2);
-            this.groupBox2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.groupBox2.Location = new System.Drawing.Point(636, 77);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.groupBox2.Location = new System.Drawing.Point(477, 62);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(351, 509);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Size = new System.Drawing.Size(263, 407);
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "玩家2";
             // 
-            // player1
+            // player2
             // 
-            this.player1.BackColor = System.Drawing.Color.MistyRose;
-            this.player1.Font = new System.Drawing.Font("方正舒体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.player1.Location = new System.Drawing.Point(6, 459);
-            this.player1.Name = "player1";
-            this.player1.Size = new System.Drawing.Size(342, 35);
-            this.player1.TabIndex = 25;
-            this.player1.Text = "玩家";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(37, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(25, 15);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "HP";
+            this.player2.BackColor = System.Drawing.Color.MistyRose;
+            this.player2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.player2.Location = new System.Drawing.Point(4, 369);
+            this.player2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.player2.Name = "player2";
+            this.player2.Size = new System.Drawing.Size(254, 26);
+            this.player2.TabIndex = 28;
+            this.player2.Text = "玩家";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Red;
-            this.label2.Location = new System.Drawing.Point(103, 35);
+            this.label2.Location = new System.Drawing.Point(77, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(25, 15);
+            this.label2.Size = new System.Drawing.Size(24, 15);
             this.label2.TabIndex = 27;
             this.label2.Text = "HP";
             // 
-            // player2
-            // 
-            this.player2.BackColor = System.Drawing.Color.MistyRose;
-            this.player2.Font = new System.Drawing.Font("方正舒体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.player2.Location = new System.Drawing.Point(6, 461);
-            this.player2.Name = "player2";
-            this.player2.Size = new System.Drawing.Size(339, 33);
-            this.player2.TabIndex = 28;
-            this.player2.Text = "玩家";
-            // 
             // SwForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(999, 597);
+            this.ClientSize = new System.Drawing.Size(749, 478);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.restart);
@@ -413,10 +443,13 @@ namespace GameCollectionApp.sw
             this.Controls.Add(this.exit);
             this.Controls.Add(this.begin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.Name = "SwForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "2P回合制对战游戏";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.SwForm_FormClosed);
+            this.Load += new System.EventHandler(this.SwForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
