@@ -1,28 +1,16 @@
-﻿
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace HeroGame
 {
     /// <summary>
     /// 商店类
     /// </summary>
-    class Store
+    public class Store
     {
         /// <summary>
-        /// 装备仓库
+        /// 装备仓库,英雄购买装备时英雄装备引用指向仓库已有装备对象而不再创建新对象
         /// </summary>
         public static List<Equipment> store = new List<Equipment>();
-
-        /// <summary>
-        /// 介绍商店所有装备信息
-        /// </summary>
-        public static void Introduce()
-        {
-            foreach (var item in store)
-            {
-                item.Introduce();
-            }
-        }
 
     }
 }

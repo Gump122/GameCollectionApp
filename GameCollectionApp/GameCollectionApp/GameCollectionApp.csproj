@@ -81,11 +81,35 @@
     <Compile Include="sw\Class\Hero.cs" />
     <Compile Include="sw\Class\Skill.cs" />
     <Compile Include="sw\Class\Store.cs" />
-    <Compile Include="sw\SwForm.cs">
+    <Compile Include="sw\settingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="sw\SwForm.Designer.cs">
-      <DependentUpon>SwForm.cs</DependentUpon>
+    <Compile Include="sw\settingForm.Designer.cs">
+      <DependentUpon>settingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\skillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\skillForm.Designer.cs">
+      <DependentUpon>skillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\stateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\stateForm.Designer.cs">
+      <DependentUpon>stateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\storeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\storeForm.Designer.cs">
+      <DependentUpon>storeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\2PmainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\2PmainForm.Designer.cs">
+      <DependentUpon>2PmainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="sw\Type\EquipmentType.cs" />
     <Compile Include="sw\Type\State.cs" />
@@ -126,8 +150,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="sw\SwForm.resx">
-      <DependentUpon>SwForm.cs</DependentUpon>
+    <EmbeddedResource Include="sw\settingForm.resx">
+      <DependentUpon>settingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\skillForm.resx">
+      <DependentUpon>skillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\stateForm.resx">
+      <DependentUpon>stateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\storeForm.resx">
+      <DependentUpon>storeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\2PmainForm.resx">
+      <DependentUpon>2PmainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="xc\XcForm.resx">
       <DependentUpon>XcForm.cs</DependentUpon>

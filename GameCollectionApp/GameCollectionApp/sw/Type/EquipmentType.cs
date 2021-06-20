@@ -4,7 +4,7 @@ namespace HeroGame
     /// <summary>
     /// 装备类型的枚举
     /// </summary>
-    enum EquipmentType
+    public enum EquipmentType
     {
         /// <summary>
         /// 普通类型
