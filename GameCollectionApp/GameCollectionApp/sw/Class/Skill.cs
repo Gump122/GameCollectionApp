@@ -1,5 +1,4 @@
-﻿using GameCollectionApp.sw;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace HeroGame
@@ -74,14 +73,14 @@ namespace HeroGame
                     {                        
                         Level++;
                         MessageBox.Show($"技能:{Name}升级成功（Level:{Level}），进入战斗阶段");
-                        Console.WriteLine($"技能:{Name}升级成功！");
-                    }                                     
+                    }
+                    else { return false; }
                     return true;
+
                 }
                 else
                 {
                     MessageBox.Show($"技能:{Name}已满级！");
-                    Console.WriteLine("技能已满级！");
                     return false;
                 }
 
@@ -89,9 +88,9 @@ namespace HeroGame
             else
             {
                 MessageBox.Show($"技能:{Name}尚未学习，无法升级！");
-                Console.WriteLine($"该技能:{Name}尚未学习，无法升级！");
                 return false;
             }
+
         }
 
         /// <summary>
@@ -109,13 +108,11 @@ namespace HeroGame
                     IsStudy = true;
                     MessageBox.Show("技能学习成功，进入战斗阶段");                    
                 }
-                Console.WriteLine($"技能{Name}学习成功！");
                 return true;
             }
             else
             {
                 MessageBox.Show("你已经学习过这个技能了，请选择升级技能");
-                Console.WriteLine("你已经学习过这个技能了，请选择升级技能");
                 return false;
             }
         }
@@ -136,20 +133,19 @@ namespace HeroGame
                 +Environment.NewLine+$"【技能等级伤害加成】：{(Level - 1) * 100}"
                 +Environment.NewLine+$"【技能冷却时间】：每{Cd}回合使用一次";
         }
-
         /// <summary>
-        /// 技能介绍方法
+        /// 更新技能状态
         /// </summary>
-        public void Introduce()
+        public void updateskillstate()
         {
-            Console.WriteLine($"-------【技能名称】：{Name}-------");
-            Console.WriteLine($"【技能等级】：{Level}");
-            Console.WriteLine($"【技能类型】：让敌方{State}");
-            Console.WriteLine($"【技能基础伤害】：{Dmg}");
-            Console.WriteLine($"【技能等级伤害加成】：{(Level - 1) * 100}");
-            Console.WriteLine($"【技能冷却时间】：每{Cd}回合使用一次");
-            Console.WriteLine("---------------------------------------------");
-        }
+            this.skillintroduce = $"【技能名称】：{Name}"
+                + Environment.NewLine + $"【技能等级】：{Level}"
+                + Environment.NewLine + $"【技能类型】：让敌方{State}"
+                + Environment.NewLine + $"【技能基础伤害】：{Dmg}"
+                + Environment.NewLine + $"【技能等级伤害加成】：{(Level - 1) * 100}"
+                + Environment.NewLine + $"【技能冷却时间】：每{Cd}回合使用一次";
+        }       
+
     }
 }
 

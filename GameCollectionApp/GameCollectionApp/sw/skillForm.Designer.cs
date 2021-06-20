@@ -59,9 +59,11 @@ namespace GameCollectionApp.sw
             // 
             // skill1
             // 
+            this.skill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.skill1.Controls.Add(this.skillintroduce1);
             this.skill1.Controls.Add(this.study1);
             this.skill1.Controls.Add(this.skillup1);
+            this.skill1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skill1.Location = new System.Drawing.Point(71, 12);
             this.skill1.Name = "skill1";
             this.skill1.Size = new System.Drawing.Size(681, 100);
@@ -71,6 +73,7 @@ namespace GameCollectionApp.sw
             // 
             // skillintroduce1
             // 
+            this.skillintroduce1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skillintroduce1.Location = new System.Drawing.Point(52, 14);
             this.skillintroduce1.Multiline = true;
             this.skillintroduce1.Name = "skillintroduce1";
@@ -101,9 +104,11 @@ namespace GameCollectionApp.sw
             // 
             // skill2
             // 
+            this.skill2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.skill2.Controls.Add(this.skillintroduce2);
             this.skill2.Controls.Add(this.study2);
             this.skill2.Controls.Add(this.skillup2);
+            this.skill2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skill2.Location = new System.Drawing.Point(71, 118);
             this.skill2.Name = "skill2";
             this.skill2.Size = new System.Drawing.Size(681, 100);
@@ -113,6 +118,7 @@ namespace GameCollectionApp.sw
             // 
             // skillintroduce2
             // 
+            this.skillintroduce2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skillintroduce2.Location = new System.Drawing.Point(52, 14);
             this.skillintroduce2.Multiline = true;
             this.skillintroduce2.Name = "skillintroduce2";
@@ -143,9 +149,11 @@ namespace GameCollectionApp.sw
             // 
             // skill3
             // 
+            this.skill3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.skill3.Controls.Add(this.skillintroduce3);
             this.skill3.Controls.Add(this.study3);
             this.skill3.Controls.Add(this.skillup3);
+            this.skill3.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skill3.Location = new System.Drawing.Point(71, 224);
             this.skill3.Name = "skill3";
             this.skill3.Size = new System.Drawing.Size(681, 100);
@@ -155,6 +163,7 @@ namespace GameCollectionApp.sw
             // 
             // skillintroduce3
             // 
+            this.skillintroduce3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skillintroduce3.Location = new System.Drawing.Point(52, 14);
             this.skillintroduce3.Multiline = true;
             this.skillintroduce3.Name = "skillintroduce3";
@@ -185,9 +194,11 @@ namespace GameCollectionApp.sw
             // 
             // skill4
             // 
+            this.skill4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.skill4.Controls.Add(this.skillintroduce4);
             this.skill4.Controls.Add(this.study4);
             this.skill4.Controls.Add(this.skillup4);
+            this.skill4.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skill4.Location = new System.Drawing.Point(71, 330);
             this.skill4.Name = "skill4";
             this.skill4.Size = new System.Drawing.Size(681, 100);
@@ -197,6 +208,7 @@ namespace GameCollectionApp.sw
             // 
             // skillintroduce4
             // 
+            this.skillintroduce4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skillintroduce4.Location = new System.Drawing.Point(52, 14);
             this.skillintroduce4.Multiline = true;
             this.skillintroduce4.Name = "skillintroduce4";
@@ -227,6 +239,7 @@ namespace GameCollectionApp.sw
             // 
             // skip
             // 
+            this.skip.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skip.Location = new System.Drawing.Point(301, 453);
             this.skip.Name = "skip";
             this.skip.Size = new System.Drawing.Size(123, 45);
@@ -237,6 +250,7 @@ namespace GameCollectionApp.sw
             // 
             // useskill1
             // 
+            this.useskill1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.useskill1.Location = new System.Drawing.Point(774, 39);
             this.useskill1.Name = "useskill1";
             this.useskill1.Size = new System.Drawing.Size(100, 50);
@@ -247,6 +261,7 @@ namespace GameCollectionApp.sw
             // 
             // useskill2
             // 
+            this.useskill2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.useskill2.Location = new System.Drawing.Point(774, 148);
             this.useskill2.Name = "useskill2";
             this.useskill2.Size = new System.Drawing.Size(100, 50);
@@ -257,6 +272,7 @@ namespace GameCollectionApp.sw
             // 
             // useskill3
             // 
+            this.useskill3.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.useskill3.Location = new System.Drawing.Point(774, 252);
             this.useskill3.Name = "useskill3";
             this.useskill3.Size = new System.Drawing.Size(100, 50);
@@ -267,6 +283,7 @@ namespace GameCollectionApp.sw
             // 
             // useskill4
             // 
+            this.useskill4.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.useskill4.Location = new System.Drawing.Point(774, 358);
             this.useskill4.Name = "useskill4";
             this.useskill4.Size = new System.Drawing.Size(100, 50);
@@ -277,6 +294,7 @@ namespace GameCollectionApp.sw
             // 
             // cancel
             // 
+            this.cancel.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.cancel.Location = new System.Drawing.Point(519, 453);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(123, 45);

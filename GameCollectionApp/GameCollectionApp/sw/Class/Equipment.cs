@@ -10,61 +10,76 @@ namespace HeroGame
         /// <summary>
         /// 装备名称
         /// </summary>
-        public string name;
+        private string name;
 
         /// <summary>
         /// 攻击加成
         /// </summary>
-        public int adUp;
+        private int adUp;
 
         /// <summary>
         /// 法强加成
         /// </summary>
-        public int apUP;
+        private int apUP;
 
         /// <summary>
         /// 护甲加成
         /// </summary>
-        public int armorUp;
+        private int armorUp;
 
         /// <summary>
         /// 魔抗加成
         /// </summary>
-        public int magicResistanceUp;
+        private int magicResistanceUp;
 
         /// <summary>
         /// 购买价格
         /// </summary>
-        public int buyPrice;
+        private int buyPrice;
 
         /// <summary>
         /// 出售价格
         /// </summary>
-        public int sellPrice;
+        private int sellPrice;
 
         /// <summary>
         /// 装备类型
         /// </summary>
-        public EquipmentType type;
+        private EquipmentType type;
 
         /// <summary>
         /// 回复血量
         /// </summary>
-        public int hp;
+        private int hp;
 
+        /// <summary>
+        /// 装备介绍
+        /// </summary>
         private string equipmentintroduce;
+
+        
+        public string Name { get => name; set => name = value; }
+        public int AdUp { get => adUp; set => adUp = value; }
+        public int ApUP { get => apUP; set => apUP = value; }
+        public int ArmorUp { get => armorUp; set => armorUp = value; }
+        public int MagicResistanceUp { get => magicResistanceUp; set => magicResistanceUp = value; }
+        public int BuyPrice { get => buyPrice; set => buyPrice = value; }
+        public int SellPrice { get => sellPrice; set => sellPrice = value; }
+        public EquipmentType Type { get => type; set => type = value; }
+        public int Hp { get => hp; set => hp = value; }
+        public string Equipmentintroduce { get => equipmentintroduce; set => equipmentintroduce = value; }
 
         public Equipment(string name, int adUp, int apUP, int armorUp, int magicResistanceUp, int buyPrice, int sellPrice, EquipmentType type, int hp)
         {
-            this.name = name;
-            this.adUp = adUp;
-            this.apUP = apUP;
-            this.armorUp = armorUp;
-            this.magicResistanceUp = magicResistanceUp;
-            this.buyPrice = buyPrice;
-            this.sellPrice = sellPrice;
-            this.type = type;
-            this.hp = hp;
+            this.Name = name;
+            this.AdUp = adUp;
+            this.ApUP = apUP;
+            this.ArmorUp = armorUp;
+            this.MagicResistanceUp = magicResistanceUp;
+            this.BuyPrice = buyPrice;
+            this.SellPrice = sellPrice;
+            this.Type = type;
+            this.Hp = hp;
 
             if(type==EquipmentType.Normal)
             {
@@ -86,36 +101,8 @@ namespace HeroGame
                   + Environment.NewLine + $"【装备回复生命值】：{hp}";
             }
         }
-
-        public string Equipmentintroduce { get => equipmentintroduce; set => equipmentintroduce = value; }
-
-        /// <summary>
-        /// 装备详情介绍方法
-        /// </summary>
-        public void Introduce()
-        {
-            if (type == EquipmentType.Normal)
-            {
-                Console.WriteLine($"-------【装备名称】：{name}-------");
-                Console.WriteLine($"【装备花费：{buyPrice}】");
-                Console.WriteLine($"【装备类型：普通类型】");
-                Console.WriteLine($"【攻击加成：{adUp}】");
-                Console.WriteLine($"【法术加成：{apUP}】");
-                Console.WriteLine($"【护甲加成：{armorUp}】");
-                Console.WriteLine($"【魔抗加成：{magicResistanceUp}】");
-                Console.WriteLine("---------------------------------------------");
-            }
-            else
-            {
-                Console.WriteLine($"-------【装备名称】：{name}-------");
-                Console.WriteLine($"【装备花费：{buyPrice}】");
-                Console.WriteLine($"【装备类型：消耗品】");
-                Console.WriteLine($"【装备回复生命值：{hp}】");
-                Console.WriteLine("---------------------------------------------");
-            }
-
-        }
-
+               
+       
     }
 }
 

@@ -45,8 +45,10 @@ namespace GameCollectionApp.sw
             // 
             // skill1
             // 
+            this.skill1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.skill1.Controls.Add(this.buy1);
             this.skill1.Controls.Add(this.equipmentintroduce1);
+            this.skill1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.skill1.Location = new System.Drawing.Point(36, 40);
             this.skill1.Name = "skill1";
             this.skill1.Size = new System.Drawing.Size(776, 114);
@@ -66,6 +68,7 @@ namespace GameCollectionApp.sw
             // 
             // equipmentintroduce1
             // 
+            this.equipmentintroduce1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.equipmentintroduce1.Location = new System.Drawing.Point(52, 14);
             this.equipmentintroduce1.Multiline = true;
             this.equipmentintroduce1.Name = "equipmentintroduce1";
@@ -76,8 +79,10 @@ namespace GameCollectionApp.sw
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox1.Controls.Add(this.buy2);
             this.groupBox1.Controls.Add(this.equipmentintroduce2);
+            this.groupBox1.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox1.Location = new System.Drawing.Point(36, 160);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(776, 114);
@@ -97,6 +102,7 @@ namespace GameCollectionApp.sw
             // 
             // equipmentintroduce2
             // 
+            this.equipmentintroduce2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.equipmentintroduce2.Location = new System.Drawing.Point(52, 14);
             this.equipmentintroduce2.Multiline = true;
             this.equipmentintroduce2.Name = "equipmentintroduce2";
@@ -107,8 +113,10 @@ namespace GameCollectionApp.sw
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox2.Controls.Add(this.buy3);
             this.groupBox2.Controls.Add(this.equipmentintroduce3);
+            this.groupBox2.Font = new System.Drawing.Font("华文琥珀", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.groupBox2.Location = new System.Drawing.Point(36, 280);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(776, 114);
@@ -128,6 +136,7 @@ namespace GameCollectionApp.sw
             // 
             // equipmentintroduce3
             // 
+            this.equipmentintroduce3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.equipmentintroduce3.Location = new System.Drawing.Point(52, 14);
             this.equipmentintroduce3.Multiline = true;
             this.equipmentintroduce3.Name = "equipmentintroduce3";
@@ -148,7 +157,7 @@ namespace GameCollectionApp.sw
             this.MaximizeBox = false;
             this.Name = "storeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "storeForm";
+            this.Text = "商店";
             this.skill1.ResumeLayout(false);
             this.skill1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

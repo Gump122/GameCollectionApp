@@ -1,5 +1,4 @@
-﻿
-namespace HeroGame
+﻿namespace HeroGame
 {
     /// <summary>
     /// 英雄状态的枚举

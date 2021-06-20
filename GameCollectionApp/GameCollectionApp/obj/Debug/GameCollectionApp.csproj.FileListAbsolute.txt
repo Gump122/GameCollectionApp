@@ -29,3 +29,4 @@ D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\Game
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.skillForm.resources
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.storeForm.resources
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.stateForm.resources
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.sw.settingForm.resources
