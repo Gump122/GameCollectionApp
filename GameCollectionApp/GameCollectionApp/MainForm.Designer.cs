@@ -1,4 +1,4 @@
-namespace GameCollectionApp
+﻿namespace GameCollectionApp
 {
     partial class MainForm
     {
@@ -36,10 +36,9 @@ namespace GameCollectionApp
             // 
             // dkButton
             // 
-            this.dkButton.Location = new System.Drawing.Point(51, 40);
-            this.dkButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dkButton.Location = new System.Drawing.Point(-1, -1);
             this.dkButton.Name = "dkButton";
-            this.dkButton.Size = new System.Drawing.Size(100, 28);
+            this.dkButton.Size = new System.Drawing.Size(253, 234);
             this.dkButton.TabIndex = 0;
             this.dkButton.Text = "dk";
             this.dkButton.UseVisualStyleBackColor = true;
@@ -47,10 +46,9 @@ namespace GameCollectionApp
             // 
             // ljwButton
             // 
-            this.ljwButton.Location = new System.Drawing.Point(212, 38);
-            this.ljwButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.ljwButton.Location = new System.Drawing.Point(247, 229);
             this.ljwButton.Name = "ljwButton";
-            this.ljwButton.Size = new System.Drawing.Size(100, 28);
+            this.ljwButton.Size = new System.Drawing.Size(245, 220);
             this.ljwButton.TabIndex = 1;
             this.ljwButton.Text = "ljw";
             this.ljwButton.UseVisualStyleBackColor = true;
@@ -58,10 +56,9 @@ namespace GameCollectionApp
             // 
             // xcButton
             // 
-            this.xcButton.Location = new System.Drawing.Point(387, 40);
-            this.xcButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.xcButton.Location = new System.Drawing.Point(247, -1);
             this.xcButton.Name = "xcButton";
-            this.xcButton.Size = new System.Drawing.Size(88, 27);
+            this.xcButton.Size = new System.Drawing.Size(245, 234);
             this.xcButton.TabIndex = 2;
             this.xcButton.Text = "xc";
             this.xcButton.UseVisualStyleBackColor = true;
@@ -69,10 +66,9 @@ namespace GameCollectionApp
             // 
             // swButton
             // 
-            this.swButton.Location = new System.Drawing.Point(549, 38);
-            this.swButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.swButton.Location = new System.Drawing.Point(-1, 229);
             this.swButton.Name = "swButton";
-            this.swButton.Size = new System.Drawing.Size(100, 28);
+            this.swButton.Size = new System.Drawing.Size(250, 220);
             this.swButton.TabIndex = 3;
             this.swButton.Text = "sw";
             this.swButton.UseVisualStyleBackColor = true;
@@ -80,14 +76,13 @@ namespace GameCollectionApp
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(491, 450);
             this.Controls.Add(this.swButton);
             this.Controls.Add(this.xcButton);
             this.Controls.Add(this.ljwButton);
             this.Controls.Add(this.dkButton);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "MainForm";
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);

@@ -39,7 +39,7 @@ namespace GameCollectionApp.xc
             this.menuButton.Font = new System.Drawing.Font("黑体", 9F);
             this.menuButton.Location = new System.Drawing.Point(0, 0);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(95, 40);
+            this.menuButton.Size = new System.Drawing.Size(94, 40);
             this.menuButton.TabIndex = 1;
             this.menuButton.Text = "菜单";
             this.menuButton.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@ namespace GameCollectionApp.xc
             this.scoreLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.scoreLabel.AutoSize = true;
             this.scoreLabel.Font = new System.Drawing.Font("黑体", 18F);
-            this.scoreLabel.Location = new System.Drawing.Point(513, 699);
+            this.scoreLabel.Location = new System.Drawing.Point(813, 899);
             this.scoreLabel.Name = "scoreLabel";
             this.scoreLabel.Size = new System.Drawing.Size(141, 36);
             this.scoreLabel.TabIndex = 2;
@@ -61,11 +61,13 @@ namespace GameCollectionApp.xc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 744);
+            this.ClientSize = new System.Drawing.Size(1778, 1144);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.menuButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "XcForm";
             this.Text = "XcForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.XcForm_FormClosed);
             this.Load += new System.EventHandler(this.XcForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

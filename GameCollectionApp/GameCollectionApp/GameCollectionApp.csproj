@@ -32,10 +32,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HZH_Controls, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HZH_Controls.1.0.14\lib\net40\HZH_Controls.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,17 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="sw\swForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="sw\swForm.Designer.cs">
-      <DependentUpon>swForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="dk\DkForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="dk\DkForm.Designer.cs">
       <DependentUpon>DkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dk\Program.cs" />
+    <Compile Include="ljw\GameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ljw\GameForm.Designer.cs">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ljw\LjwForm.cs">
       <SubType>Form</SubType>
@@ -67,6 +68,7 @@
     <Compile Include="ljw\LjwForm.Designer.cs">
       <DependentUpon>LjwForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ljw\Program.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +77,42 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sw\Class\Equipment.cs" />
+    <Compile Include="sw\Class\Hero.cs" />
+    <Compile Include="sw\Class\Skill.cs" />
+    <Compile Include="sw\Class\Store.cs" />
+    <Compile Include="sw\settingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\settingForm.Designer.cs">
+      <DependentUpon>settingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\skillForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\skillForm.Designer.cs">
+      <DependentUpon>skillForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\stateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\stateForm.Designer.cs">
+      <DependentUpon>stateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\storeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\storeForm.Designer.cs">
+      <DependentUpon>storeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\2PmainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sw\2PmainForm.Designer.cs">
+      <DependentUpon>2PmainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="sw\Type\EquipmentType.cs" />
+    <Compile Include="sw\Type\State.cs" />
     <Compile Include="xc\Card.cs" />
     <Compile Include="xc\CardsPictureBox.cs">
       <SubType>Component</SubType>
@@ -83,6 +121,7 @@
       <DependentUpon>CardsPictureBox.cs</DependentUpon>
     </Compile>
     <Compile Include="xc\Pyramid.cs" />
+    <Compile Include="xc\PyramidCheck.cs" />
     <Compile Include="xc\PyramidFrame.cs" />
     <Compile Include="xc\XcForm.cs">
       <SubType>Form</SubType>
@@ -90,11 +129,11 @@
     <Compile Include="xc\XcForm.Designer.cs">
       <DependentUpon>XcForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="sw\swForm.resx">
-      <DependentUpon>swForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="dk\DkForm.resx">
       <DependentUpon>DkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ljw\GameForm.resx">
+      <DependentUpon>GameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ljw\LjwForm.resx">
       <DependentUpon>LjwForm.cs</DependentUpon>
@@ -112,10 +151,25 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sw\settingForm.resx">
+      <DependentUpon>settingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\skillForm.resx">
+      <DependentUpon>skillForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\stateForm.resx">
+      <DependentUpon>stateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\storeForm.resx">
+      <DependentUpon>storeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sw\2PmainForm.resx">
+      <DependentUpon>2PmainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="xc\XcForm.resx">
       <DependentUpon>XcForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="app.manifest" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,12 +184,112 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="xc\CardsPicture\" />
-    <Folder Include="xc\resources\" />
     <Folder Include="zhy\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\background.jpg" />
+    <None Include="src\1t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\2t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\3t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\4t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\5t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\6t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\7t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\8t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\9t.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\1s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\1w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\2s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\2w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\3s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\3w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\4s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\4w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\5s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\5w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\6s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\6w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\7s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\7w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\8s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\8w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\9s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\9w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\bb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\f.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

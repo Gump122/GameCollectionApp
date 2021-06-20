@@ -43,6 +43,46 @@ namespace GameCollectionApp.xc
       }
       return cards;
     }
+
+    public bool IsCardValueK(int row, int col)  //判断某张卡牌是否为K
+    {
+      Card card = getCard(row, col);
+      if (card.getValue() == 13) return true;
+      else return false;
+    }
+    public bool isOneTopCard(int row, int col)
+    {
+      if (row < this.getRows() - 1)
+      {
+        Card card1 = getCard(row + 1, col);
+        Card card2 = getCard(row + 1, col + 1);
+
+        if (card1 != null || card2 != null) return false;
+
+      }
+      return true;
+    }
+    public bool areTwoTopCards(int row1, int col1, int row2, int col2)
+    {
+      return isOneTopCard(row1, col1) && isOneTopCard(row2, col2);
+    }
+    public bool isCardsSumValueK(int row1, int col1, int row2, int col2)    //判断两张卡牌的和是否为K
+    {
+      Card card1 = getCard(row1, col1);
+      Card card2 = getCard(row2, col2);
+      if (card1.getValue() + card2.getValue() == 13) return true;
+      else return false;
+    }
+
+    public void hideCard(int row, int col)  //将一张卡片隐藏起来，即设为null
+    {
+      this.pyramid[row][col] = null;
+    }
+    public void hideTwoCards(int row1, int col1, int row2, int col2)    //将两张卡牌隐藏起来
+    {
+      hideCard(row1, col1);
+      hideCard(row2, col2);
+    }
   }
   
   
