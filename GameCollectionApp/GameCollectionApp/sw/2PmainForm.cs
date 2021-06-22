@@ -166,17 +166,20 @@ namespace GameCollectionApp.sw
         //开始游戏，创建游戏对象
         public void begin_Click(object sender, EventArgs e)
         {
+            //新建商店
+            Store s = new Store();
+
             //新建盲僧技能
-            Skill huiyinji = new Skill("回音击", State.Dizziness, false, 100, 4);
-            Skill jinzhongzhao = new Skill("金钟罩", State.Silence, false, 65, 2);
-            Skill beishang = new Skill("悲伤的失恋", State.Silence, false, 130, 4);
+            Skill huiyinji = new Skill("回音击", State.Dizziness, false, 100, 5);
+            Skill jinzhongzhao = new Skill("金钟罩", State.Silence, false, 65, 3);
+            Skill beishang = new Skill("悲伤的失恋", State.Silence, false, 130, 5);
             Skill touqian = new Skill("偷钱", State.Normal, false, 180, 2);
 
             //新建提莫技能
-            Skill yingxingdechibang = new Skill("隐形的翅膀", State.Dizziness, false, 110, 4);
-            Skill zhimangchuijian = new Skill("致盲吹箭", State.Normal, false, 100, 2);
-            Skill duxingsheji = new Skill("毒性射击", State.Silence, false, 130, 3);
-            Skill zhongmogu = new Skill("种蘑菇", State.Dizziness, false, 185, 4);
+            Skill yingxingdechibang = new Skill("隐形的翅膀", State.Dizziness, false, 110, 5);
+            Skill zhimangchuijian = new Skill("致盲吹箭", State.Normal, false, 100, 3);
+            Skill duxingsheji = new Skill("毒性射击", State.Silence, false, 130, 4);
+            Skill zhongmogu = new Skill("种蘑菇", State.Dizziness, false, 255, 5);
 
             //将盲僧的技能放入一个集合
             List<Skill> mangsengskills = new List<Skill>();
@@ -191,15 +194,7 @@ namespace GameCollectionApp.sw
             timoskills.Add(zhimangchuijian);
             timoskills.Add(duxingsheji);
             timoskills.Add(zhongmogu);
-
-            //新建装备
-            Equipment sanxiangzhili = new Equipment("三相之力", 45, 45, 30, 30, 3000, 1750, EquipmentType.Normal, 0);
-            Equipment wujinzhiren = new Equipment("无尽之刃", 100, 0, 0, 0, 2000, 900, EquipmentType.Normal, 0);
-            Equipment feizhaikuaileshui = new Equipment("肥宅快乐水", 15, 5, 15, 10, 500, 0, EquipmentType.Consumables, 200);            
-            //将新建的装备放入商店
-            Store.store.Add(sanxiangzhili);
-            Store.store.Add(wujinzhiren);
-            Store.store.Add(feizhaikuaileshui);
+            
 
             //新建英雄盲僧
             hero1 = new Hero("版本之子盲僧", initmoney, inithp, initad, initap, Initarmor, InitmagicResistance, mangsengskills);
