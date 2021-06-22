@@ -40,3 +40,5 @@ D:\A\GitHub\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\Game
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\bin\Debug\HZH_Controls.dll
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.ljw.GameForm.resources
 D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\obj\Debug\GameCollectionApp.csproj.CopyComplete
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\bin\Debug\Newtonsoft.Json.dll
+D:\GameCollectionApp\GameCollectionApp\GameCollectionApp\bin\Debug\Newtonsoft.Json.xml

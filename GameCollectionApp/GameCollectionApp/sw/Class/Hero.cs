@@ -8,7 +8,7 @@ namespace HeroGame
     /// 英雄类
     /// </summary>
     public class Hero
-    {
+    {       
         /// <summary>
         /// 英雄名称
         /// </summary>
@@ -309,6 +309,65 @@ namespace HeroGame
             return true;
 
         }
+
+        
+
+        /// <summary>
+        /// 英雄选择初始化
+        /// </summary>
+        public static Hero heroinit(int i)
+        {
+            //新建盲僧技能
+            Skill huiyinji = new Skill("回音击", State.Dizziness, false, 100, 5);
+            Skill jinzhongzhao = new Skill("金钟罩", State.Silence, false, 65, 3);
+            Skill beishang = new Skill("悲伤的失恋", State.Silence, false, 130, 5);
+            Skill touqian = new Skill("偷钱", State.Normal, false, 180, 2);
+
+            //将盲僧的技能放入一个集合
+            List<Skill> mangsengskills = new List<Skill>();
+            mangsengskills.Add(huiyinji);
+            mangsengskills.Add(jinzhongzhao);
+            mangsengskills.Add(beishang);
+            mangsengskills.Add(touqian);
+
+            //新建英雄盲僧
+            Hero mangseng = new Hero("版本之子盲僧", 0, 0, 0, 0, 0, 0, mangsengskills);
+
+            //新建提莫技能
+            Skill yingxingdechibang = new Skill("隐形的翅膀", State.Dizziness, false, 110, 5);
+            Skill zhimangchuijian = new Skill("致盲吹箭", State.Normal, false, 100, 3);
+            Skill duxingsheji = new Skill("毒性射击", State.Silence, false, 130, 4);
+            Skill zhongmogu = new Skill("种蘑菇", State.Dizziness, false, 255, 5);
+
+            //将提莫的技能放入一个集合
+            List<Skill> timoskills = new List<Skill>();
+            timoskills.Add(yingxingdechibang);
+            timoskills.Add(zhimangchuijian);
+            timoskills.Add(duxingsheji);
+            timoskills.Add(zhongmogu);
+
+            //新建英雄提莫
+            Hero timo = new Hero("万年的子提莫", 0, 1000, 0, 0, 0, 0, timoskills);
+
+            switch (i)
+            {
+                case 1:
+                    return mangseng;
+                case 2:
+                    return timo;
+                //case 3:
+                //    return nuoshou;
+                //case 4:
+                //    return yasuo;
+                default:
+                    return null;
+            }
+
+            
+        }
+
+        
+
 
     }
 }

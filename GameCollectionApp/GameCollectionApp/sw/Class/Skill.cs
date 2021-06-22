@@ -107,8 +107,7 @@ namespace HeroGame
                 {
                     IsStudy = true;
                     Level++;
-                    MessageBox.Show("技能学习成功，进入战斗阶段");
-                }
+                    MessageBox.Show("技能学习成功，进入战斗阶段");               
                     return true;
                 }
                 else if(d == DialogResult.OK) { return false; }

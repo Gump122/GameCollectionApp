@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using HeroGame;
 
 
 namespace GameCollectionApp.sw
 {
+
 
     /// <summary>
     /// 2PGame主界面
@@ -37,6 +37,20 @@ namespace GameCollectionApp.sw
         {
             InitializeComponent();
             this.parent = parent;
+        }
+
+        /// <summary>
+        /// 英雄属性初始化
+        /// </summary>
+        /// <param name="hero"></param>
+        public void heroadd(Hero hero)
+        {
+            hero.Money += initmoney;
+            hero.Hp += inithp;
+            hero.Ad += initad;
+            hero.Ap += initap;
+            hero.Armor += initarmor;
+            hero.MagicResistance += initmagicResistance;
         }
 
         /// <summary>
@@ -167,40 +181,14 @@ namespace GameCollectionApp.sw
         public void begin_Click(object sender, EventArgs e)
         {
             //新建商店
-            Store s = new Store();
+            Store s = new Store();           
 
-            //新建盲僧技能
-            Skill huiyinji = new Skill("回音击", State.Dizziness, false, 100, 5);
-            Skill jinzhongzhao = new Skill("金钟罩", State.Silence, false, 65, 3);
-            Skill beishang = new Skill("悲伤的失恋", State.Silence, false, 130, 5);
-            Skill touqian = new Skill("偷钱", State.Normal, false, 180, 2);
+            hero1 = deepcopy.CloneJson(Hero.heroinit(1));
+            heroadd(hero1);
+            hero2 = deepcopy.CloneJson(Hero.heroinit(2));
+            heroadd(hero2);
 
-            //新建提莫技能
-            Skill yingxingdechibang = new Skill("隐形的翅膀", State.Dizziness, false, 110, 5);
-            Skill zhimangchuijian = new Skill("致盲吹箭", State.Normal, false, 100, 3);
-            Skill duxingsheji = new Skill("毒性射击", State.Silence, false, 130, 4);
-            Skill zhongmogu = new Skill("种蘑菇", State.Dizziness, false, 255, 5);
 
-            //将盲僧的技能放入一个集合
-            List<Skill> mangsengskills = new List<Skill>();
-            mangsengskills.Add(huiyinji);
-            mangsengskills.Add(jinzhongzhao);
-            mangsengskills.Add(beishang);
-            mangsengskills.Add(touqian);
-
-            //将提莫的技能放入一个集合
-            List<Skill> timoskills = new List<Skill>();
-            timoskills.Add(yingxingdechibang);
-            timoskills.Add(zhimangchuijian);
-            timoskills.Add(duxingsheji);
-            timoskills.Add(zhongmogu);
-            
-
-            //新建英雄盲僧
-            hero1 = new Hero("版本之子盲僧", initmoney, inithp, initad, initap, Initarmor, InitmagicResistance, mangsengskills);
-
-            //新建英雄提莫
-            hero2 = new Hero("万年的子提莫", initmoney, inithp+1000, initad, initap, Initarmor, InitmagicResistance, timoskills);           
             update();
             splayer1 = true;
             changeturn();            

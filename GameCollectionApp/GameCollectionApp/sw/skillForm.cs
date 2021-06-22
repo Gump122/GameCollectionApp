@@ -57,6 +57,47 @@ namespace GameCollectionApp.sw
             skillintroduce4.DataBindings.Add("Text", hero1.Skills[3], "Skillintroduce");            
         }
 
+
+        /// <summary>
+        /// 使用技能函数
+        /// </summary>
+        /// <param name="i">技能项数字</param>
+        public void useskill(int i)
+        {
+            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
+            DialogResult d = MessageBox.Show($"确定发动技能{hero1.Skills[i].Name}?", "提示", mess);
+            if (d == DialogResult.OK && hero1.Skills[i].IsStudy == true && hero1.Skills[i].CdCount == hero1.Skills[i].Cd)
+            {
+                MessageBox.Show($"技能发动成功，对{hero2.Name}造成伤害{hero1.Skills[i].Dmg * hero1.Skills[i].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2}");
+                hero1.Skills[i].CdCount = 0;
+                hero2.Hp -= (hero1.Skills[i].Dmg * hero1.Skills[i].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
+                hero2.State = hero1.Skills[i].State;
+                hero1.Money += (hero1.Skills[i].Dmg * hero1.Skills[i].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
+                if (hero2.Hp < 0)
+                {
+                    MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
+                    parent.closeall();
+                }
+                else
+                {
+                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
+                    else { parent.splayer2 = false; parent.splayer1 = true; }
+                    parent.changeturn();
+                    parent.update();
+                }
+
+                Close();
+            }
+            else if (d == DialogResult.Cancel) { }
+            else
+            {
+                if (hero1.Skills[i].IsStudy == false)
+                    MessageBox.Show("技能尚未学习，发动失败!");
+                else
+                    MessageBox.Show("技能尚未冷却，发动失败!");
+            }
+        }
+
         //跳过技能准备
         private void skip_Click(object sender, System.EventArgs e)
         {
@@ -149,148 +190,19 @@ namespace GameCollectionApp.sw
         //使用技能
         private void useskill1_Click(object sender, System.EventArgs e)
         {
-            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
-            DialogResult d = MessageBox.Show($"确定发动技能{hero1.Skills[0].Name}?", "提示", mess);
-            if (d == DialogResult.OK&& hero1.Skills[0].IsStudy==true&& hero1.Skills[0].CdCount== hero1.Skills[0].Cd)
-            {
-                MessageBox.Show($"技能发动成功，对{hero2.Name}造成伤害{hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2}");
-                hero1.Skills[0].CdCount = 0;
-                hero2.Hp -= (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor -hero2.ArmorUp - hero2.MagicResistance*2 -hero2.MagicResistanceUp*2);
-                hero2.State = hero1.Skills[0].State;
-                hero1.Money += (hero1.Skills[0].Dmg * hero1.Skills[0].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
-                if (hero2.Hp < 0)
-                {
-                    MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
-                    parent.closeall();
-                }
-                else
-                {
-                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                    else { parent.splayer2 = false; parent.splayer1 = true; }
-                    parent.changeturn();
-                    parent.update();
-                }
-
-                Close();
-            }
-            else if(d == DialogResult.Cancel) { }
-            else { 
-                if(hero1.Skills[0].IsStudy == false)
-                MessageBox.Show("技能尚未学习，发动失败!");
-                else
-                MessageBox.Show("技能尚未冷却，发动失败!");
-            }
+            useskill(0);
         }
         private void useskill2_Click(object sender, System.EventArgs e)
         {
-            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
-            DialogResult d = MessageBox.Show($"确定发动技能{hero1.Skills[1].Name}?", "提示", mess);
-            if (d == DialogResult.OK && hero1.Skills[1].IsStudy == true && hero1.Skills[1].CdCount == hero1.Skills[1].Cd)
-            {
-                MessageBox.Show($"技能发动成功，对{hero2.Name}造成伤害{hero1.Skills[1].Dmg * hero1.Skills[1].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2}");
-                hero1.Skills[1].CdCount = 0;
-                hero2.Hp -= (hero1.Skills[1].Dmg * hero1.Skills[1].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
-                hero2.State = hero1.Skills[1].State;
-                hero1.Money += (hero1.Skills[1].Dmg * hero1.Skills[1].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
-                if (hero2.Hp < 0)
-                {
-                    MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
-                    parent.closeall();
-                }
-                else
-                {
-                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                    else { parent.splayer2 = false; parent.splayer1 = true; }
-                    parent.changeturn();
-                    parent.update();
-                }
-                
-                Close();
-            }
-            else if (d == DialogResult.Cancel) { }
-            else
-            {
-                if (hero1.Skills[1].IsStudy == false)
-                    MessageBox.Show("技能尚未学习，发动失败!");
-                else
-                    MessageBox.Show("技能尚未冷却，发动失败!");
-            }
-
-
+            useskill(1);
         }
         private void useskill3_Click(object sender, System.EventArgs e)
         {
-            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
-            DialogResult d = MessageBox.Show($"确定发动技能{hero1.Skills[2].Name}?", "提示", mess);
-            if (d == DialogResult.OK && hero1.Skills[2].IsStudy == true&&hero1.Skills[2].CdCount == hero1.Skills[2].Cd)
-            {
-                MessageBox.Show($"技能发动成功，对{hero2.Name}造成伤害{hero1.Skills[2].Dmg * hero1.Skills[2].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2}");
-                hero1.Skills[2].CdCount = 0;
-                hero2.Hp -= (hero1.Skills[2].Dmg * hero1.Skills[2].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
-                hero2.State = hero1.Skills[2].State;
-                hero1.Money += (hero1.Skills[2].Dmg * hero1.Skills[2].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
-                if (hero2.Hp < 0)
-                {
-                    MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
-                    parent.closeall();
-                }
-                
-                else
-                {
-                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                    else { parent.splayer2 = false; parent.splayer1 = true; }
-                    parent.changeturn();
-                    parent.update();
-                }
-                
-
-                Close();
-            }
-            else if (d == DialogResult.Cancel) { }
-            else
-            {
-                if (hero1.Skills[2].IsStudy == false)
-                    MessageBox.Show("技能尚未学习，发动失败!");
-                else
-                    MessageBox.Show("技能尚未冷却，发动失败!");
-            }
-
+            useskill(2);
         }
         private void useskill4_Click(object sender, System.EventArgs e)
         {
-            MessageBoxButtons mess = MessageBoxButtons.OKCancel;
-            DialogResult d = MessageBox.Show($"确定发动技能{hero1.Skills[3].Name}?", "提示", mess);
-            if (d == DialogResult.OK && hero1.Skills[3].IsStudy == true && hero1.Skills[3].CdCount == hero1.Skills[3].Cd)
-            {
-                MessageBox.Show($"技能发动成功，对{hero2.Name}造成伤害{hero1.Skills[3].Dmg * hero1.Skills[3].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2}");
-                hero1.Skills[3].CdCount = 0;
-                hero2.Hp -= (hero1.Skills[3].Dmg * hero1.Skills[3].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2);
-                hero2.State = hero1.Skills[3].State;
-                hero1.Money += (hero1.Skills[3].Dmg * hero1.Skills[3].Level - hero2.Armor - hero2.ArmorUp - hero2.MagicResistance * 2 - hero2.MagicResistanceUp * 2) * 5;
-                if (hero2.Hp < 0)
-                {
-                    MessageBox.Show($"{hero2.Name}死亡，{hero1.Name}胜利！");
-                    parent.closeall();
-                }
-                else
-                {
-                    if (parent.splayer1 == true) { parent.splayer1 = false; parent.splayer2 = true; }
-                    else { parent.splayer2 = false; parent.splayer1 = true; }
-                    parent.changeturn();
-                    parent.update();
-                }
-                
-
-                Close();
-            }
-            else if (d == DialogResult.Cancel) { }
-            else
-            {
-                if (hero1.Skills[3].IsStudy == false)
-                    MessageBox.Show("技能尚未学习，发动失败!");
-                else
-                    MessageBox.Show("技能尚未冷却，发动失败!");
-            }
+            useskill(3);
         }
 
 
