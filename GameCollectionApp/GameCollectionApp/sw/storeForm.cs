@@ -7,10 +7,10 @@ namespace GameCollectionApp.sw
     {
         SwForm parent;
         Hero hero = new Hero();
-        public storeForm(Hero hero1,SwForm parent)
+        public storeForm(Hero hero,SwForm parent)
         {
             InitializeComponent();
-            this.hero = hero1;
+            this.hero = hero;
             this.parent = parent;
             bindstoreequipments();            
         }
@@ -21,6 +21,7 @@ namespace GameCollectionApp.sw
             equipmentintroduce1.DataBindings.Add("Text", Store.store[0], "Equipmentintroduce");
             equipmentintroduce2.DataBindings.Add("Text", Store.store[1], "Equipmentintroduce");
             equipmentintroduce3.DataBindings.Add("Text", Store.store[2], "Equipmentintroduce");
+            moneyview.DataBindings.Add("Text", hero, "Money");
         }
 
 
@@ -79,6 +80,10 @@ namespace GameCollectionApp.sw
             else if (Store.store[0].Type == EquipmentType.Consumables && hero.Money >= Store.store[0].BuyPrice)
             {
                 hero.Hp += Store.store[0].Hp;
+                hero.AdUp += Store.store[0].AdUp;
+                hero.ApUp += Store.store[0].ApUP;
+                hero.ArmorUp += Store.store[0].ArmorUp;
+                hero.MagicResistanceUp += Store.store[2].MagicResistanceUp;
                 MessageBox.Show("购买成功！变强了！");
                 hero.updateherostate();
                 hero.Money -= Store.store[0].BuyPrice;
@@ -88,7 +93,8 @@ namespace GameCollectionApp.sw
                 parent.changeturn();
                 parent.update();
             }
-            else if (hero.Money < Store.store[0].BuyPrice)
+            else if(d == DialogResult.Cancel) { }
+            else if (d == DialogResult.OK&&hero.Money < Store.store[0].BuyPrice)
             {
                 MessageBox.Show("剩余金钱不足！");                
             }
@@ -143,6 +149,10 @@ namespace GameCollectionApp.sw
             else if (Store.store[1].Type == EquipmentType.Consumables && hero.Money >= Store.store[1].BuyPrice)
             {
                 hero.Hp += Store.store[1].Hp;
+                hero.AdUp += Store.store[1].AdUp;
+                hero.ApUp += Store.store[1].ApUP;
+                hero.ArmorUp += Store.store[1].ArmorUp;
+                hero.MagicResistanceUp += Store.store[2].MagicResistanceUp;
                 MessageBox.Show("购买成功！变强了！");
                 hero.Money -= Store.store[1].BuyPrice;
                 hero.updateherostate();
@@ -152,7 +162,8 @@ namespace GameCollectionApp.sw
                 parent.changeturn();
                 parent.update();
             }
-            else if (hero.Money < Store.store[1].BuyPrice)
+            else if (d == DialogResult.Cancel) { }
+            else if (d == DialogResult.OK && hero.Money < Store.store[1].BuyPrice)
             {
                 MessageBox.Show("剩余金钱不足！");
             }
@@ -205,6 +216,10 @@ namespace GameCollectionApp.sw
             else if (Store.store[2].Type == EquipmentType.Consumables && hero.Money >= Store.store[2].BuyPrice)
             {
                 hero.Hp += Store.store[2].Hp;
+                hero.AdUp += Store.store[2].AdUp;
+                hero.ApUp += Store.store[2].ApUP;
+                hero.ArmorUp += Store.store[2].ArmorUp;
+                hero.MagicResistanceUp += Store.store[2].MagicResistanceUp;
                 MessageBox.Show("购买成功！变强了！");
                 hero.updateherostate();
                 hero.Money -= Store.store[2].BuyPrice;
@@ -214,7 +229,8 @@ namespace GameCollectionApp.sw
                 parent.changeturn();
                 parent.update();
             }
-            else if(hero.Money < Store.store[2].BuyPrice)
+            else if (d == DialogResult.Cancel) { }
+            else if(d == DialogResult.OK && hero.Money < Store.store[2].BuyPrice)
             { 
                 MessageBox.Show("剩余金钱不足！");
             }

@@ -38,6 +38,8 @@ namespace GameCollectionApp.sw
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buy3 = new System.Windows.Forms.Button();
             this.equipmentintroduce3 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.moneyview = new System.Windows.Forms.Label();
             this.skill1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -145,11 +147,31 @@ namespace GameCollectionApp.sw
             this.equipmentintroduce3.Size = new System.Drawing.Size(542, 94);
             this.equipmentintroduce3.TabIndex = 3;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "金钱：";
+            // 
+            // moneyview
+            // 
+            this.moneyview.AutoSize = true;
+            this.moneyview.Location = new System.Drawing.Point(88, 13);
+            this.moneyview.Name = "moneyview";
+            this.moneyview.Size = new System.Drawing.Size(15, 15);
+            this.moneyview.TabIndex = 6;
+            this.moneyview.Text = "0";
+            // 
             // storeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(829, 427);
+            this.Controls.Add(this.moneyview);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.skill1);
@@ -165,6 +187,7 @@ namespace GameCollectionApp.sw
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -179,5 +202,7 @@ namespace GameCollectionApp.sw
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button buy3;
         private System.Windows.Forms.TextBox equipmentintroduce3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label moneyview;
     }
 }
